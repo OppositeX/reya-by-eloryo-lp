@@ -1,9 +1,9 @@
-# Project brief — {{PROJECT_NAME}}
+# Project brief — Eloryo - Reya LP
 
-- Client: {{CLIENT_NAME}}
-- Assigned to: {{ASSIGNED_TO_NAME}} ({{ASSIGNED_TO_EMAIL}})
-- Agency: {{AGENCY_NAME}}
+- Client: Eloryo
+- Assigned to: otw.design002@gmail.com (otw.design002@gmail.com)
+- Agency: OTW
 
 ## Goals
 
-_Fill in the approved brief for {{CLIENT_NAME}}._
+_Fill in the approved brief for Eloryo._

@@ -1,12 +1,12 @@
-# {{PROJECT_NAME}}
+# Eloryo - Reya LP
 
-Client: **{{CLIENT_NAME}}** · Built by {{AGENCY_NAME}}
+Client: **Eloryo** · Built by OTW
 
 A marketing website scaffolded by the Agency Project Launcher.
 
-- Project slug: `{{PROJECT_SLUG}}`
-- Created by: {{CREATED_BY_NAME}} ({{CREATED_BY_EMAIL}})
-- Created at: {{CREATED_AT}}
+- Project slug: `eloryo-reya-lp`
+- Created by: otw.design002@gmail.com (otw.design002@gmail.com)
+- Created at: 2026-07-22T09:30:57.855532+00:00
 
 ## Getting started
 

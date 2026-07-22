@@ -1,8 +1,8 @@
 # Project identity
 
-- Project: {{PROJECT_NAME}}
-- Client: {{CLIENT_NAME}}
-- Agency: {{AGENCY_NAME}}
+- Project: Eloryo - Reya LP
+- Client: Eloryo
+- Agency: OTW
 - Project type: Marketing website
 - Deployment: Vercel
 - Package manager: pnpm
@@ -30,3 +30,10 @@ Before implementing a meaningful feature:
 - Never expose secrets to browser code.
 - Do not push directly to `main`. Create a branch for meaningful work.
 - Never commit `.env` files.
+
+
+## Project context (added by OTW Project Launcher)
+
+When designing or building this project, read and follow:
+
+- Build prompt: `.claude/build-prompt.md` — the intended scope for this project.
