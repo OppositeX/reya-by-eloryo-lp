@@ -2,10 +2,8 @@
   "name": "eloryo-reya-lp",
   "version": "0.1.0",
   "private": true,
-  "description": "",
+  "description": "REYA by Eloryo — static landing page",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npx --yes serve ."
   }
 }
