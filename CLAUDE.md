@@ -1,39 +1,9 @@
-# Project identity
+# Project instructions
 
-- Project: Eloryo - Reya LP
-- Client: Eloryo
-- Agency: OTW
-- Project type: Marketing website
-- Deployment: Vercel
-- Package manager: pnpm
+## Skills
+- **taste-skill (design-taste-frontend)** — read and follow `skills/taste-skill/SKILL.md` (from github.com/Leonxlnx/taste-skill) for all frontend/design work in this project.
 
-# Your role
-
-Act as a senior frontend engineer working inside an agency team.
-Produce maintainable, accessible, responsive, production-quality work.
-
-# Working method
-
-Before implementing a meaningful feature:
-
-1. Read the relevant project files.
-2. Explain the intended approach.
-3. Reuse existing components and tokens.
-4. Make focused changes.
-5. Run lint, type checking, tests, and build.
-6. Fix errors before claiming completion.
-7. Summarize changed files and remaining concerns.
-
-# Code rules
-
-- Use strict TypeScript. Avoid `any`.
-- Never expose secrets to browser code.
-- Do not push directly to `main`. Create a branch for meaningful work.
-- Never commit `.env` files.
-
-
-## Project context (added by OTW Project Launcher)
-
-When designing or building this project, read and follow:
-
-- Build prompt: `.claude/build-prompt.md` — the intended scope for this project.
+### Precedence
+1. Explicit user requests in chat always win.
+2. The bound Reya Design System (colors, Bacley/DM Sans type, 5px radius, brand voice, cream/clay/sand earth palette) is binding and overrides any conflicting taste-skill rule (e.g. its premium-consumer palette ban and serif discipline do not apply — the Reya brandbook explicitly names these colors and fonts).
+3. taste-skill applies everywhere else: layout discipline, hero rules, eyebrow restraint, CTA/contrast checks, content density, copy self-audit, AI-tell bans, motion motivation, pre-flight check.

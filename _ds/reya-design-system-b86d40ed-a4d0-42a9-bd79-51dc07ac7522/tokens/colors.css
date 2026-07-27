@@ -1,0 +1,37 @@
+:root{
+--reya-earth-brown:#4C382E;
+--reya-soft-clay:#A3674B;
+--reya-coastal-sand:#BFAA89;
+--reya-mediterranean-beige:#CDAB7F;
+--reya-dusk-teal:#4D6D6E;
+--reya-olive-grove:#869177;
+--reya-cream:#F3ECE1;
+--reya-cream-dim:#EDE4D6;
+--reya-white:#FFFFFF;
+
+--color-bg:var(--reya-cream);
+--color-bg-alt:var(--reya-cream-dim);
+--color-surface:var(--reya-white);
+--color-surface-sunken:var(--reya-cream-dim);
+
+--color-text-primary:var(--reya-earth-brown);
+--color-text-secondary:oklch(from var(--reya-earth-brown) l c h / 0.68);
+--color-text-muted:oklch(from var(--reya-earth-brown) l c h / 0.46);
+--color-text-on-dark:var(--reya-cream);
+--color-text-on-accent:var(--reya-cream);
+
+--color-border:oklch(from var(--reya-earth-brown) l c h / 0.16);
+--color-border-strong:oklch(from var(--reya-earth-brown) l c h / 0.3);
+
+--color-accent-primary:var(--reya-soft-clay);
+--color-accent-primary-hover:oklch(from var(--reya-soft-clay) calc(l - 0.06) c h);
+--color-accent-primary-active:oklch(from var(--reya-soft-clay) calc(l - 0.1) c h);
+
+--color-accent-secondary:var(--reya-dusk-teal);
+--color-accent-secondary-hover:oklch(from var(--reya-dusk-teal) calc(l - 0.06) c h);
+
+--color-accent-tertiary:var(--reya-olive-grove);
+
+--color-focus-ring:oklch(from var(--reya-dusk-teal) l c h / 0.45);
+--color-overlay:oklch(from var(--reya-earth-brown) l c h / 0.55);
+}

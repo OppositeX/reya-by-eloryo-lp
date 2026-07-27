@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-Thin.woff2') format('woff2'),url('../assets/fonts/Bacley-Thin.woff') format('woff');font-weight:100;font-style:normal;font-display:swap;}
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-ExtraLight.woff2') format('woff2'),url('../assets/fonts/Bacley-ExtraLight.woff') format('woff');font-weight:200;font-style:normal;font-display:swap;}
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-Light.woff2') format('woff2'),url('../assets/fonts/Bacley-Light.woff') format('woff');font-weight:300;font-style:normal;font-display:swap;}
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-Regular.woff2') format('woff2'),url('../assets/fonts/Bacley-Regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-Medium.woff2') format('woff2'),url('../assets/fonts/Bacley-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-SemiBold.woff2') format('woff2'),url('../assets/fonts/Bacley-SemiBold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:'Bacley';src:url('../assets/fonts/Bacley-Bold.woff2') format('woff2'),url('../assets/fonts/Bacley-Bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap;}
