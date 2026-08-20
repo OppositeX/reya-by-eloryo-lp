@@ -38,11 +38,13 @@ export default function Location() {
           className="reya-loc-map"
           style={{
             position: 'absolute',
-            top: '50%',
+            top: 0,
             right: '-4em',
-            transform: 'translateY(-50%)',
+            // Full container height + object-fit:contain, rather than a centred
+            // 16:9 box: on very wide screens a 108%-wide box is taller than the
+            // section and the map spills over the copy and the next section.
+            height: '100%',
             width: '108%',
-            aspectRatio: '1920/1080',
             zIndex: 1,
             pointerEvents: 'none',
           }}

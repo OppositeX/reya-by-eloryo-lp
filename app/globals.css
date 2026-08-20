@@ -167,6 +167,13 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 .reya-bento-eyebrow{font-family:var(--font-body);font-weight:400;font-size:var(--text-eyebrow);letter-spacing:.14em;text-transform:uppercase;color:var(--reya-cream);opacity:.8}
 .reya-bento-title{font-family:var(--font-display);font-weight:var(--weight-regular);font-size:clamp(1.3rem,1.8vw,1.7rem);line-height:1.12;color:var(--reya-cream);margin:0}
 .reya-bento-desc{font-family:var(--font-body);font-size:var(--text-body-sm);line-height:1.55;color:var(--reya-cream);opacity:.85;margin:0;max-width:52ch}
+/* Very wide screens: the map is bound by the section height, so once the
+   container passes ~1800px the 860px cap leaves it stranded in the right half
+   with a dead gutter. Let the section grow a little further so the artwork
+   keeps scaling with the page. */
+@media(min-width:1800px){
+#location>div{min-height:clamp(860px,44vw,1020px) !important}
+}
 /* Laptop widths (roughly 1100-1500px): the map is absolutely positioned at
    108% of the container and bleeds off the right edge, so its left edge slides
    under the copy column and the illustration runs behind the heading and rows.
@@ -178,7 +185,7 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 @media(min-width:1101px) and (max-width:1500px){
 .reya-loc-text{width:min(580px,48%) !important}
 .reya-loc-text h2{font-size:clamp(2.2rem,4.2vw,3.9rem) !important}
-.reya-loc-map{width:80% !important;top:0 !important;transform:none !important;height:100%;aspect-ratio:auto !important}
+.reya-loc-map{width:80% !important}
 }
 @media(max-width:1100px){.reya-bento{grid-template-columns:repeat(2,1fr)}.reya-bento-tile{grid-column:span 2 !important;grid-row:span 1 !important}}
 @media(max-width:640px){.reya-bento{grid-template-columns:1fr;grid-auto-rows:auto}.reya-bento-tile{grid-column:span 1 !important;grid-row:span 1 !important;aspect-ratio:1/1}}
@@ -233,7 +240,7 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
    narrow-format artwork, which gets the full page width instead of half.
    (The <=880px block below re-bleeds it to that layout's 1.25em padding.) */
 #location>div{flex-direction:column !important;align-items:stretch !important;min-height:0 !important}
-.reya-loc-map{position:static !important;transform:none !important;order:-1;
+.reya-loc-map{position:static !important;transform:none !important;height:auto !important;order:-1;
   width:calc(100% + 8em) !important;margin-left:-4em !important;margin-right:-4em !important;
   margin-top:0;margin-bottom:18px;aspect-ratio:auto !important;pointer-events:none}
 .reya-loc-map .reya-map-desk{display:none !important}
@@ -284,7 +291,7 @@ footer img{height:172px !important}
 .reya-featrow{flex:0 0 auto !important}
 #location{padding-top:clamp(45px,5vw,70px) !important;padding-bottom:clamp(45px,5vw,70px) !important}
 #location>div{flex-direction:column !important;align-items:stretch !important;min-height:0 !important}
-.reya-loc-map{position:static !important;transform:none !important;width:calc(100% + 2.5em) !important;margin-left:-1.25em !important;margin-right:-1.25em !important;margin-top:0;order:-1;aspect-ratio:auto !important;margin-bottom:18px;pointer-events:none}
+.reya-loc-map{position:static !important;transform:none !important;height:auto !important;width:calc(100% + 2.5em) !important;margin-left:-1.25em !important;margin-right:-1.25em !important;margin-top:0;order:-1;aspect-ratio:auto !important;margin-bottom:18px;pointer-events:none}
 .reya-loc-map .reya-map-desk{display:none !important}
 .reya-loc-map .reya-map-mob{display:block !important}
 .reya-loc-text{width:100% !important}
