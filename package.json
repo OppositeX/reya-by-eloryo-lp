@@ -2,8 +2,25 @@
   "name": "eloryo-reya-lp",
   "version": "0.1.0",
   "private": true,
-  "description": "REYA by Eloryo — static landing page",
+  "description": "REYA by Eloryo — residential development landing page",
   "scripts": {
-    "dev": "npx --yes serve ."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "optimize": "python scripts/optimize-images.py"
+  },
+  "dependencies": {
+    "gsap": "3.13.0",
+    "lenis": "1.3.11",
+    "next": "^16.3.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "19.1.1",
+    "@types/react-dom": "19.1.1",
+    "typescript": "5.7.2"
   }
 }

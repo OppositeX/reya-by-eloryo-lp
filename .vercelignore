@@ -1,0 +1,11 @@
+# Kept out of the build upload. Next.js only deploys its build output and
+# public/, but trimming the upload keeps deploys fast.
+.claude/
+skills/
+.agency/
+.devcontainer/
+docs/
+screenshots/
+scripts/
+.thumbnail
+_ds/

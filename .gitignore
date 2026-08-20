@@ -1,21 +1,29 @@
+# dependencies
 node_modules
-.next
-.env*
 
-# Local-only working material (heavy, not needed to render the site)
+# next.js
+.next
+out
+next-env.d.ts
+
+# env
+.env*
+!.env.example
+
+# local-only working material
 .thumbnail
 screenshots/
 design_handoff_reya_landing/
 
-# Source uploads are local-only, except the files index.html actually loads
-uploads/*
-!uploads/3.png
-!uploads/4.png
-!uploads/6.png
-!uploads/Assets-24.png
-!uploads/Assets-35.png
-!uploads/mapimg.png
-!uploads/ChatGPT Image Jul 22, 2026, 11_09_57 PM.png
-!uploads/ChatGPT Image Jul 22, 2026, 11_10_00 PM.png
-!uploads/ChatGPT Image Jul 22, 2026, 11_10_09 PM.png
-!uploads/magnific_locked-camera.-only-subtl_tfoooHPmZJ.mp4
+# Source images are local-only. Only the optimized .webp files under public/
+# are committed -- regenerate them with `npm run optimize`.
+public/**/*.png
+public/**/*.jpg
+public/**/*.jpeg
+
+# vercel / os
+.vercel
+.DS_Store
+
+# typescript incremental build info
+*.tsbuildinfo
