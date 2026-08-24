@@ -279,6 +279,9 @@ footer img{height:172px !important}
 .reya-tab-lbl .reya-tab-sep{display:none}
 .reya-tab-lbl>span:last-child{font-size:.82rem}
 .reya-mbr br{display:none}
+/* Pre-sales announcement bar: on small screens keep just the statement */
+.reya-presale-bar{font-size:.78rem !important}
+.reya-presale-bar .reya-presale-sep,.reya-presale-bar .reya-presale-cta{display:none}
 /* 'Your land • Your deed • Your boundary' — own line on mobile, one line edge
    to edge, never wrapping (the shared .reya-mbr rule hides the <br> above it) */
 .reya-ylb{display:block;white-space:nowrap;margin-top:8px;font-size:min(1.25rem,4.3vw)}

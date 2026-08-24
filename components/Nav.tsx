@@ -34,11 +34,58 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
 
   return (
     <>
+      <div
+        className="reya-presale-bar"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 101,
+          height: 38,
+          background: '#a3947b',
+          color: '#FBF7EF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 12,
+          padding: '0 16px',
+          fontFamily: 'var(--font-body)',
+          fontSize: 'var(--text-body-sm)',
+          letterSpacing: '.08em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        <span style={{ fontWeight: 500 }}>Pre-sales are now open</span>
+        <span className="reya-presale-sep" aria-hidden="true" style={{ opacity: 0.6 }}>
+          —
+        </span>
+        <button
+          type="button"
+          onClick={onInquire}
+          className="reya-presale-cta"
+          style={{
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            font: 'inherit',
+            color: 'inherit',
+            letterSpacing: 'inherit',
+            textTransform: 'inherit',
+            textDecoration: 'underline',
+            textUnderlineOffset: 4,
+            cursor: 'pointer',
+          }}
+        >
+          Book your private visit
+        </button>
+      </div>
       <nav
         className="reya-nav"
         style={{
           position: 'fixed',
-          top: 0,
+          top: 38,
           left: 0,
           right: 0,
           zIndex: 100,
