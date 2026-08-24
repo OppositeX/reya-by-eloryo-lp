@@ -45,28 +45,76 @@ export function Phases() {
         >
           The Phases
         </span>
-        <h2
+        <div
           style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.2rem,4.6vw,3.6rem)',
-            lineHeight: 1.12,
-            color: 'var(--color-text-primary)',
-            margin: 0,
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius)',
+            padding: 'clamp(24px,3.5vw,40px) clamp(28px,4.5vw,56px)',
+            textAlign: 'left',
+            width: '100%',
+            maxWidth: 640,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 4,
           }}
         >
-          σιτάρι sitári — Wheat.
-        </h2>
-        <span
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontWeight: 200,
-            fontSize: 'var(--text-body-lg)',
-            letterSpacing: '.04em',
-            color: 'var(--color-text-secondary)',
-          }}
-        >
-          Noun: The crop and the grain.
-        </span>
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.2rem,4.6vw,3.4rem)',
+              lineHeight: 1.05,
+              color: 'var(--color-text-primary)',
+              margin: 0,
+              display: 'flex',
+              alignItems: 'baseline',
+              gap: 14,
+              flexWrap: 'wrap',
+            }}
+          >
+            si·tá·ri
+            <span
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontWeight: 200,
+                fontSize: 'clamp(1rem,1.6vw,1.25rem)',
+                letterSpacing: '.05em',
+                color: 'var(--color-text-muted)',
+              }}
+            >
+              /siˈta·ri/ · Greek σιτάρι
+            </span>
+          </h2>
+          <span
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontStyle: 'italic',
+              fontWeight: 300,
+              fontSize: 'var(--text-body)',
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            noun
+          </span>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-body-lg)',
+              lineHeight: 1.6,
+              color: 'var(--color-text-secondary)',
+              borderTop: '1px solid var(--color-border)',
+              margin: '10px 0 0',
+              paddingTop: 14,
+              display: 'flex',
+              gap: 12,
+            }}
+          >
+            <span style={{ fontWeight: 200 }}>1.</span>
+            <span>
+              <strong style={{ fontWeight: 500, color: 'var(--color-text-primary)' }}>Wheat</strong>{' '}
+              — the crop and the grain.
+            </span>
+          </p>
+        </div>
         <p
           style={{
             fontFamily: 'var(--font-body)',
@@ -78,8 +126,10 @@ export function Phases() {
         >
           The first residences are released in the Wheat phase, named after the crop this ground has
           produced for generations &amp; that richness is still here, in the soil, in the community
-          and in the heritage around it. Reya arrives as the next season, picking up where the last
-          one left off, growing the village and building for the families who will call it home.
+          and in the heritage around it.
+          <br />
+          Reya arrives as the next season, picking up where the last one left off, growing the
+          village and building for the families who will call it home.
         </p>
       </div>
     </section>
