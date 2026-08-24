@@ -149,8 +149,8 @@ export default function Vision() {
               }}
             >
               The name Pervolia comes from the Greek for orchards &amp; true to its origin the land
-              around it is still farmed today. Fields of wheat and artichoke reaching up to the
-              horizon, punctuated by the distant mountains’ silhouette and calming presence of the
+              around it still produces today. Fields of wheat and artichoke reaching up to the
+              horizon, punctuated by the mountains’ silhouette and calming presence of the
               Mediterranean sea.
               <span style={{ display: 'block', height: '0.55em' }} />
               Reya marks a new chapter in the village story. Modern, well-built homes conceived
