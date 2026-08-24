@@ -149,7 +149,7 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
           >
             Not a managed apartment block. Not a shared scheme.
             <br />
-            <span style={{ fontWeight: 600 }}>
+            <span className="reya-ylb" style={{ fontWeight: 600 }}>
               Your land
               <span aria-hidden="true" style={{ margin: '0 0.6em' }}>
                 •

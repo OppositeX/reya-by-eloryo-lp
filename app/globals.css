@@ -273,6 +273,10 @@ footer img{height:172px !important}
 .reya-res-tabs{gap:0 !important;overflow-x:visible;justify-content:space-between}
 .reya-res-tabs button{flex:1;font-size:.95rem !important;margin-right:0 !important;white-space:nowrap;padding:12px 0 !important;text-align:center}
 .reya-mbr br{display:none}
+/* 'Your land • Your deed • Your boundary' — own line on mobile, one line edge
+   to edge, never wrapping (the shared .reya-mbr rule hides the <br> above it) */
+.reya-ylb{display:block;white-space:nowrap;margin-top:8px;font-size:min(1.25rem,4.3vw)}
+.reya-ylb span{margin:0 .4em !important}
 .reya-vis-head{position:static !important;margin-bottom:6px;text-align:center;align-items:center}
 .reya-vis-copy{position:static !important;max-width:none !important;margin-top:14px !important}
 #vision{min-height:0 !important;padding-top:28px !important;padding-bottom:28px !important}
