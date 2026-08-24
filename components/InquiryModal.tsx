@@ -175,7 +175,7 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
               }}
             >
               Book your curated tour of our site and Pervolia to experience the village and coast
-              first hand. Included full access to view and walk through the development using our in
+              first hand, with full access to view and walk through the development using our in
               house platform.
             </p>
 
@@ -251,17 +251,6 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
               >
                 Request your private visit
               </span>
-              <span
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontWeight: 200,
-                  fontSize: 'var(--text-body-sm)',
-                  color: 'var(--reya-cream)',
-                  opacity: 0.8,
-                }}
-              >
-                A member of the Eloryo team will confirm the same day.
-              </span>
             </div>
 
             <div className={`reya-field${errors.fullName ? ' reya-field--error' : ''}`} style={{ gridColumn: '1/-1' }}>
@@ -280,11 +269,6 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
               <input type="tel" autoComplete="tel" aria-invalid={!!errors.phone} {...field('phone')} />
               <label>Phone number</label>
               {errors.phone && <FieldError>{errors.phone}</FieldError>}
-            </div>
-
-            <div className="reya-field" style={{ gridColumn: '1/-1' }}>
-              <textarea {...field('message')} />
-              <label>Special requests (optional)</label>
             </div>
 
             <div style={{ gridColumn: '1/-1', display: 'flex', flexDirection: 'column', gap: 14, marginTop: 18 }}>

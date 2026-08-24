@@ -216,7 +216,7 @@ export const ownershipCards = [
   {
     eyebrow: 'Pricing',
     title: 'From €307,000',
-    desc: 'Seven types across three elements. Prices are fixed at exchange.',
+    desc: 'Seven typologies · 3 elements.',
   },
   {
     eyebrow: 'Freehold Title',
@@ -259,14 +259,13 @@ export const residencyCards = [
   },
   {
     title: 'VAT at 5%',
-    desc: 'The reduced rate applies to a first home purchase in Cyprus within the regulated caps, and the saving runs into tens of thousands.',
+    desc: 'The reduced rate applies to a first home purchase in Cyprus within the regulated caps, and the saving can run into tens of thousands.',
   },
 ];
 
 export const salesSuite = [
   { label: 'Location', value: 'Pervolia, Larnaca · Cyprus' },
   { label: 'Open', value: 'Daily, 10:00 – 17:00' },
-  { label: 'Response', value: 'Our team replies within 2 hours' },
 ];
 
 /** Vision section collage, cross-faded on a timer. */

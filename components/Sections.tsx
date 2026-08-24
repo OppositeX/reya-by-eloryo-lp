@@ -435,8 +435,20 @@ export function Residency() {
           The qualifying threshold for Cyprus Permanent Residency is €300,000 <br />
           net of VAT on a new-build property purchased from a developer.
           <br />
-          Every home at Reya meets it. Cyprus is an EU member state with attractive incentives.
+          Every home at Reya meets it.
         </p>
+
+        <h3
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(1.5rem,2.6vw,2.1rem)',
+            lineHeight: 1.2,
+            color: 'var(--reya-cream)',
+            margin: 'clamp(28px,4vw,48px) 0 0',
+          }}
+        >
+          Cyprus is an EU member state with attractive incentives.
+        </h3>
 
         <div
           className="reya-prgrid"
@@ -533,23 +545,6 @@ export function Footer() {
           height={540}
           style={{ height: 215, width: 'auto' }}
         />
-        <p
-          className="reya-foot-line"
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontWeight: 200,
-            fontSize: 'var(--text-body)',
-            lineHeight: 1.7,
-            opacity: 0.8,
-            margin: 0,
-            maxWidth: 'none',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Reya, a residential development by Eloryo
-          <span className="reya-res-brk"> </span>in Pervolia, on Cyprus’s southern coast.
-        </p>
-
         <div style={{ display: 'flex', gap: 22, justifyContent: 'center' }}>
           <a href="#" aria-label="Instagram" style={{ color: 'var(--reya-cream)', opacity: 0.8 }}>
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -586,8 +581,8 @@ export function Footer() {
           }}
         >
           Artist’s impressions are for illustrative purposes only. Dimensions and specifications are
-          approximate and subject to change. Prices exclude VAT. Reya is developed by Eloryo; the
-          legal seller is Flona Properties Ltd, incorporated in the Republic of Cyprus. Design
+          approximate and subject to change. Prices exclude VAT. The legal seller is Flona
+          Properties Ltd, incorporated in the Republic of Cyprus. Design
           partners: J+A Architects. Marketing by OTW. Full legal information to follow.
         </p>
 
