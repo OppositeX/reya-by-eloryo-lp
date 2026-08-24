@@ -227,6 +227,9 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 .reya-underline{position:relative}
 .reya-underline::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:width 220ms var(--ease-standard)}
 .reya-underline:hover::after{width:100%}
+/* Residence tabs: element icon sits left of the label on desktop,
+   stacked above and centered on mobile (see 880px block) */
+.reya-res-tabs button{display:inline-flex;align-items:center;gap:9px}
 /* ---- responsive / mobile ---- */
 @media(max-width:1200px){
 .reya-resintro{width:auto !important;height:auto !important}
@@ -271,7 +274,10 @@ footer img{height:172px !important}
 .reya-res-cta button{width:100% !important}
 .reya-res-cta>a{text-align:center}
 .reya-res-tabs{gap:0 !important;overflow-x:visible;justify-content:space-between}
-.reya-res-tabs button{flex:1;font-size:.95rem !important;margin-right:0 !important;white-space:nowrap;padding:12px 0 !important;text-align:center}
+.reya-res-tabs button{flex:1;font-size:.95rem !important;margin-right:0 !important;white-space:nowrap;padding:12px 0 !important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px}
+.reya-tab-lbl{display:flex;flex-direction:column;align-items:center;line-height:1.35}
+.reya-tab-lbl .reya-tab-sep{display:none}
+.reya-tab-lbl>span:last-child{font-size:.82rem}
 .reya-mbr br{display:none}
 /* 'Your land • Your deed • Your boundary' — own line on mobile, one line edge
    to edge, never wrapping (the shared .reya-mbr rule hides the <br> above it) */

@@ -6,6 +6,45 @@ import { residenceTabs, residences } from '@/lib/content';
 import { Button, ChevronLeft, ChevronRight, CloseIcon } from './ui';
 import Portal from './Portal';
 
+/** Thin-line marks for the three elements, drawn to match the tab text color. */
+function ElementIcon({ element }: { element: string }) {
+  const common = {
+    width: 20,
+    height: 20,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.5,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  };
+  if (element === 'Air') {
+    return (
+      <svg {...common}>
+        <path d="M3 8.5h9.5a2.4 2.4 0 1 0-2.4-2.4" />
+        <path d="M3 12.5h13.8a2.7 2.7 0 1 1-2.7 2.7" />
+        <path d="M3 16.5h6.5a2 2 0 1 1-2 2" />
+      </svg>
+    );
+  }
+  if (element === 'Earth') {
+    return (
+      <svg {...common}>
+        <path d="M12 4.5c4.6 0 7.8 2.7 7.8 6.3 0 3.9-3.4 8.7-7.8 8.7s-8-3.6-8-7.5c0-4.2 3.4-7.5 8-7.5Z" />
+        <path d="M12.2 7.8c2.7 0 4.6 1.5 4.6 3.4 0 2.3-2 5-4.7 5s-4.6-2-4.6-4.3c0-2.4 2-4.1 4.7-4.1Z" />
+        <path d="M12.3 11c1 0 1.7.5 1.7 1.2 0 .9-.8 1.8-1.8 1.8s-1.6-.7-1.6-1.5c0-.9.7-1.5 1.7-1.5Z" />
+      </svg>
+    );
+  }
+  return (
+    <svg {...common}>
+      <circle cx="12" cy="12" r="3.6" />
+      <path d="M12 3.2v2.2M12 18.6v2.2M3.2 12h2.2M18.6 12h2.2M5.8 5.8l1.5 1.5M16.7 16.7l1.5 1.5M18.2 5.8l-1.5 1.5M7.3 16.7l-1.5 1.5" />
+    </svg>
+  );
+}
+
 export default function Residences({ onInquire }: { onInquire: () => void }) {
   const [active, setActive] = useState(0);
   // One carousel position per residence, so switching tabs keeps your place.
@@ -119,9 +158,12 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
               transition: 'color 150ms, border-color 150ms',
             }}
           >
-            <span style={{ fontWeight: 600 }}>{label.split(' · ')[0]}</span>
-            {' · '}
-            {label.split(' · ')[1]}
+            <ElementIcon element={label.split(' · ')[0]} />
+            <span className="reya-tab-lbl" style={{ whiteSpace: 'nowrap' }}>
+              <span style={{ fontWeight: 600 }}>{label.split(' · ')[0]}</span>
+              <span className="reya-tab-sep"> · </span>
+              <span>{label.split(' · ')[1]}</span>
+            </span>
           </button>
         ))}
       </div>
