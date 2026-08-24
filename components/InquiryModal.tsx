@@ -254,19 +254,19 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
             </div>
 
             <div className={`reya-field${errors.fullName ? ' reya-field--error' : ''}`} style={{ gridColumn: '1/-1' }}>
-              <input type="text" autoComplete="name" aria-invalid={!!errors.fullName} {...field('fullName')} />
+              <input type="text" autoComplete="name" required aria-invalid={!!errors.fullName} {...field('fullName')} />
               <label>Full name</label>
               {errors.fullName && <FieldError>{errors.fullName}</FieldError>}
             </div>
 
-            <div className={`reya-field${errors.email ? ' reya-field--error' : ''}`}>
-              <input type="email" autoComplete="email" aria-invalid={!!errors.email} {...field('email')} />
+            <div className={`reya-field${errors.email ? ' reya-field--error' : ''}`} style={{ gridColumn: '1/-1' }}>
+              <input type="email" autoComplete="email" required aria-invalid={!!errors.email} {...field('email')} />
               <label>Email address</label>
               {errors.email && <FieldError>{errors.email}</FieldError>}
             </div>
 
-            <div className={`reya-field${errors.phone ? ' reya-field--error' : ''}`}>
-              <input type="tel" autoComplete="tel" aria-invalid={!!errors.phone} {...field('phone')} />
+            <div className={`reya-field${errors.phone ? ' reya-field--error' : ''}`} style={{ gridColumn: '1/-1' }}>
+              <input type="tel" autoComplete="tel" required aria-invalid={!!errors.phone} {...field('phone')} />
               <label>Phone number</label>
               {errors.phone && <FieldError>{errors.phone}</FieldError>}
             </div>
