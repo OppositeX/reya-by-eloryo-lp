@@ -116,7 +116,8 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
               margin: 0,
             }}
           >
-            106 residences.<span className="reya-res-brk"> </span>One address.
+            106 residences<span className="reya-res-dot"> • </span>
+            <span className="reya-res-brk"> </span>One address.
           </h2>
           <p
             data-vi-el=""

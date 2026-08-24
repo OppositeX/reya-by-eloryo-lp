@@ -44,7 +44,7 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
         <span
           style={{
             fontFamily: 'var(--font-body)',
-            fontWeight: 200,
+            fontWeight: 400,
             fontSize: 'var(--text-eyebrow)',
             letterSpacing: '.18em',
             textTransform: 'uppercase',
@@ -64,7 +64,9 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
             whiteSpace: 'nowrap',
           }}
         >
-          Seven homes.<span className="reya-res-brk"> </span>Three elements.
+          Seven typologies<span className="reya-res-dot"> • </span>
+          <span className="reya-res-brk"> </span>Three elements
+          <span className="reya-res-dot"> • </span>
           <span className="reya-res-brk"> </span>One address.
         </h3>
         <p
@@ -78,13 +80,10 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
             maxWidth: 'none',
           }}
         >
-          Seven types, designed around how you actually want to spend a day. Morning coffee with the
-          veranda doors pushed back,
+          Designed around how you actually want to spend a day.
           <br />
-          the breeze through the open plan living space and afternoons soaking up the rays on your
-          lounger, with nowhere else to be.
-          <br />
-          <span style={{ fontWeight: 400 }}>All the things you notice first.</span>
+          Morning coffee with the veranda doors pushed back, the breeze through the open plan living
+          space and afternoons soaking up the rays on your lounger, with nowhere else to be.
         </p>
       </div>
 
@@ -120,7 +119,9 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
               transition: 'color 150ms, border-color 150ms',
             }}
           >
-            {label}
+            <span style={{ fontWeight: 600 }}>{label.split(' · ')[0]}</span>
+            {' · '}
+            {label.split(' · ')[1]}
           </button>
         ))}
       </div>
