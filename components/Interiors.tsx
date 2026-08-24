@@ -350,26 +350,25 @@ function Outdoor({ onInquire }: { onInquire: () => void }) {
           alignSelf: 'center',
         }}
       >
-        Reya is best experienced, not described. Join us for coffee at our newly built sales suite —
-        book your curated tour of our site and Pervolia to experience the village and coast first
-        hand.{' '}
-        <button
-          type="button"
-          onClick={onInquire}
-          style={{
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            font: 'inherit',
-            color: 'var(--color-accent-secondary)',
-            cursor: 'pointer',
-            textDecoration: 'underline',
-          }}
-        >
-          Book your tour now
-        </button>
-        .
+        Reya is best experienced, not described. Join us for coffee at our newly built sales suite
+        to experience the village and coast first hand.
       </p>
+      <button
+        type="button"
+        onClick={onInquire}
+        className="reya-cta reya-cta--solid"
+        style={{
+          alignSelf: 'center',
+          marginTop: 22,
+          padding: '17px 40px',
+          fontSize: 'var(--text-body-lg)',
+          fontWeight: 600,
+          letterSpacing: '.08em',
+          textTransform: 'uppercase',
+        }}
+      >
+        Book Your Curated Tour Now
+      </button>
     </div>
   );
 }
