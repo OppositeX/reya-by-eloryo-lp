@@ -133,7 +133,7 @@ export const navLinks = [
 export const features = [
   { label: 'Contemporary homes, designed by renowned architects', img: '/assets/photography/feat-architects.webp' },
   { label: 'Open-plan living', img: '/assets/photography/bento-kitchens.webp' },
-  { label: 'Photovoltaics', img: '/assets/photography/bento-structure.webp' },
+  { label: 'Solar - Photovoltaics', img: '/assets/photography/bento-structure.webp' },
   { label: 'Covered veranda & parking space', img: '/assets/photography/feat-veranda.webp' },
   { label: 'Swimming pool & AC system (optional)', img: '/assets/photography/feat-pool.webp' },
 ];
@@ -141,7 +141,7 @@ export const features = [
 export const stats = [
   { value: '106', label: 'Private Residences' },
   { value: '42,000', label: 'm² of Land' },
-  { value: '2-5', label: 'Bedrooms' },
+  { value: '2-4', label: 'Bedrooms' },
 ];
 
 export const bentoTiles = [

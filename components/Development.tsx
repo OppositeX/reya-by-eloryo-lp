@@ -129,11 +129,11 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
               margin: 0,
             }}
           >
-            Reya embraces the warm, inclusive Cypriot essence,
+            Reya embraces the warm Cypriot essence,
             <br />
             holding hands with the village centre.
             <br />
-            Every home sits on its own individual plot with a separate title deed.
+            Every home sits on its own private plot with an individual title deed.
           </p>
           <p
             data-vi-el=""
@@ -148,7 +148,17 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
           >
             Not a managed apartment block. Not a shared scheme.
             <br />
-            <span style={{ fontWeight: 500 }}>Your land, your deed, your boundary.</span>
+            <span style={{ fontWeight: 600 }}>
+              Your land
+              <span aria-hidden="true" style={{ margin: '0 0.6em' }}>
+                •
+              </span>
+              Your deed
+              <span aria-hidden="true" style={{ margin: '0 0.6em' }}>
+                •
+              </span>
+              Your boundary
+            </span>
           </p>
 
           <div
