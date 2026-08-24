@@ -58,28 +58,6 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
         }}
       >
         <span style={{ fontWeight: 500 }}>Pre-sales are now open</span>
-        <span className="reya-presale-sep" aria-hidden="true" style={{ opacity: 0.6 }}>
-          —
-        </span>
-        <button
-          type="button"
-          onClick={onInquire}
-          className="reya-presale-cta"
-          style={{
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            font: 'inherit',
-            color: 'inherit',
-            letterSpacing: 'inherit',
-            textTransform: 'inherit',
-            textDecoration: 'underline',
-            textUnderlineOffset: 4,
-            cursor: 'pointer',
-          }}
-        >
-          Book your private visit
-        </button>
       </div>
       <nav
         className="reya-nav"
