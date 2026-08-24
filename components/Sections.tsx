@@ -209,7 +209,7 @@ export function Beach() {
         }}
       >
         {amenities.map((a) => (
-          <div key={a.title} className="reya-amenity" style={{ aspectRatio: '3/2.8', minHeight: 295 }}>
+          <div key={a.title} className="reya-amenity" style={{ aspectRatio: '3/2.52', minHeight: 266 }}>
             <div className="reya-amimg">
               <Image src={a.img} alt={a.title} fill sizes="(max-width: 880px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
             </div>
