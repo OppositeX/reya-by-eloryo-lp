@@ -381,3 +381,22 @@ h2,h3{overflow-wrap:break-word}
 .reya-watchfilm{transition:background 150ms var(--ease-standard),border-color 150ms var(--ease-standard)}
 .reya-watchfilm:hover{background:rgba(28,20,16,0.55);border-color:var(--reya-cream)}
 .reya-iconbtn{background:transparent;border:none;cursor:pointer}
+
+/* Coming-soon holding page: the lattice side elements from the "106
+   residences" section. On small screens each rotates 90deg so the left one
+   runs along the top edge (fading down) and the right one along the bottom
+   edge (fading up). The rotated visual box is 100vw wide by 87.6vw tall
+   (the artwork's 946x1080 ratio). */
+.reya-cs-el{position:absolute;top:50%;transform:translateY(-50%);height:min(72vh,700px);width:auto;opacity:.9;pointer-events:none}
+.reya-cs-el--a{left:0}
+.reya-cs-el--b{right:0}
+@media(max-width:880px){
+.reya-cs-el{height:100vw;transform-origin:top left;transform:rotate(90deg) translateY(-100%)}
+.reya-cs-el--a{top:0}
+.reya-cs-el--b{left:0;right:auto;top:calc(100% - 87.6vw)}
+}
+
+/* Coming-soon holding page: one soft settle-in on load (single-moment page). */
+.reya-cs-fade{opacity:0;transform:translateY(20px);animation:reya-cs-fade 1s var(--ease-standard) .1s forwards}
+@keyframes reya-cs-fade{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reya-cs-fade{animation:none;opacity:1;transform:none}}

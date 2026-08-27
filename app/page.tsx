@@ -1,10 +1,10 @@
-import PageShell from '@/components/PageShell';
+import ComingSoon from '@/components/ComingSoon';
 
 /**
- * The route is a server component: the whole page is rendered to HTML on the
- * server, which is the point of the migration. PageShell owns only the small
- * amount of shared client state (whether the enquiry modal is open).
+ * The root route serves the coming-soon holding page for now. The full landing
+ * page (PageShell) is still available at /preview; to go live, render
+ * <PageShell /> here again and delete app/preview.
  */
 export default function Home() {
-  return <PageShell />;
+  return <ComingSoon />;
 }
