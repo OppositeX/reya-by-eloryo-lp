@@ -1,17 +1,22 @@
 import { NextResponse } from 'next/server';
+import { enquirerConfirmation, leadNotification, type Lead } from '@/lib/emails';
 
 /**
  * Sales enquiry endpoint.
  *
- * Validates server-side (never trust the client form) and then delivers the
- * lead. Delivery is intentionally pluggable: set RESEND_API_KEY + INQUIRY_TO
- * to email it, or swap `deliver()` for a CRM call. With neither configured the
- * lead is logged and the request still succeeds, so the form works in dev.
+ * Validates server-side (never trust the client form), then delivers the lead
+ * through Resend: a notification to INQUIRY_TO that replies straight back to
+ * the enquirer, plus a confirmation to the enquirer themselves.
+ *
+ * Without RESEND_API_KEY / INQUIRY_TO the lead is logged and the request still
+ * succeeds, so the form works in local development. In production that config
+ * is required — a missing key there fails loudly rather than dropping leads.
  */
 
 export const runtime = 'nodejs';
 
-type Payload = { fullName: string; email: string; phone: string; message?: string };
+const RESEND_ENDPOINT = 'https://api.resend.com/emails';
+const DEFAULT_FROM = 'Reya <noreply@reya.cy>';
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MAX = 4000;
@@ -20,7 +25,7 @@ function clean(v: unknown): string {
   return typeof v === 'string' ? v.trim().slice(0, MAX) : '';
 }
 
-function validate(body: Record<string, unknown>): { data?: Payload; errors?: string[] } {
+function validate(body: Record<string, unknown>): { data?: Lead; errors?: string[] } {
   const fullName = clean(body.fullName);
   const email = clean(body.email);
   const phone = clean(body.phone);
@@ -34,37 +39,60 @@ function validate(body: Record<string, unknown>): { data?: Payload; errors?: str
   return errors.length ? { errors } : { data: { fullName, email, phone, message } };
 }
 
-async function deliver(lead: Payload) {
-  const key = process.env.RESEND_API_KEY;
-  const to = process.env.INQUIRY_TO;
+type Message = {
+  to: string;
+  replyTo: string;
+  subject: string;
+  text: string;
+  html: string;
+};
 
-  if (!key || !to) {
-    // No provider wired up yet. Keep the lead in the logs rather than dropping
-    // it silently, and let the caller succeed so the UI still works.
-    console.info('[inquiry] no delivery configured; lead:', lead);
-    return;
-  }
-
-  const res = await fetch('https://api.resend.com/emails', {
+async function send(key: string, from: string, msg: Message) {
+  const res = await fetch(RESEND_ENDPOINT, {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      from: process.env.INQUIRY_FROM ?? 'Reya <onboarding@resend.dev>',
-      to: [to],
-      reply_to: lead.email,
-      subject: `Reya enquiry — ${lead.fullName}`,
-      text: [
-        `Name:  ${lead.fullName}`,
-        `Email: ${lead.email}`,
-        `Phone: ${lead.phone}`,
-        '',
-        lead.message || '(no message)',
-      ].join('\n'),
+      from,
+      to: [msg.to],
+      reply_to: msg.replyTo,
+      subject: msg.subject,
+      text: msg.text,
+      html: msg.html,
     }),
   });
 
   if (!res.ok) {
-    throw new Error(`Email provider returned ${res.status}`);
+    // Resend returns a JSON body describing the failure (unverified domain,
+    // bad key, invalid recipient); surface it in the logs, not to the client.
+    throw new Error(`Resend returned ${res.status}: ${await res.text()}`);
+  }
+}
+
+async function deliver(lead: Lead) {
+  const key = process.env.RESEND_API_KEY;
+  const to = process.env.INQUIRY_TO;
+  const from = process.env.INQUIRY_FROM ?? DEFAULT_FROM;
+
+  if (!key || !to) {
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('RESEND_API_KEY and INQUIRY_TO must be set in production.');
+    }
+    console.info('[inquiry] no delivery configured; lead:', lead);
+    return;
+  }
+
+  // The team notification is the one that must land — await it and let a
+  // failure surface as a 502 so the visitor is told to try again.
+  const notification = leadNotification(lead);
+  await send(key, from, { to, replyTo: lead.email, ...notification });
+
+  // The confirmation is a courtesy. The lead is already captured, so a failure
+  // here is logged and swallowed rather than shown as a failed submission.
+  try {
+    const confirmation = enquirerConfirmation(lead);
+    await send(key, from, { to: lead.email, replyTo: to, ...confirmation });
+  } catch (err) {
+    console.error('[inquiry] confirmation email failed:', err);
   }
 }
 
