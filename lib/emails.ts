@@ -99,10 +99,7 @@ export function enquirerConfirmation(lead: Lead) {
     <table style="width:100%;border-collapse:collapse;margin-top:8px;">
       ${row('Location', 'Pervolia, Larnaca · Cyprus')}
       ${row('Open', 'Daily, 10:00 – 17:00')}
-    </table>
-    <p style="margin:26px 0 0;font-family:${BODY};font-size:14px;line-height:1.6;color:${BROWN};opacity:.7;">
-      Replying to this email reaches our sales team directly.
-    </p>`);
+    </table>`);
 
   return { subject: 'Your visit to Reya — request received', text, html };
 }
