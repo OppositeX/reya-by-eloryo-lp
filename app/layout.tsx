@@ -75,7 +75,11 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: ['/uploads/hero-poster.webp'],
   },
-  robots: { index: true, follow: true },
+  // Kept out of search for now. robots.txt still allows crawling on purpose:
+  // a disallowed page is never fetched, so the noindex below would never be
+  // read and the URL could still surface bare in results. To go live, flip
+  // these back to true (and see the note in app/robots.ts).
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   alternates: { canonical: '/' },
 };
 
