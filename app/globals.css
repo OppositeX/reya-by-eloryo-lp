@@ -381,3 +381,8 @@ h2,h3{overflow-wrap:break-word}
 .reya-watchfilm{transition:background 150ms var(--ease-standard),border-color 150ms var(--ease-standard)}
 .reya-watchfilm:hover{background:rgba(28,20,16,0.55);border-color:var(--reya-cream)}
 .reya-iconbtn{background:transparent;border:none;cursor:pointer}
+
+/* Coming-soon holding page: one soft settle-in on load (single-moment page). */
+.reya-cs-fade{opacity:0;transform:translateY(20px);animation:reya-cs-fade 1s var(--ease-standard) .1s forwards}
+@keyframes reya-cs-fade{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reya-cs-fade{animation:none;opacity:1;transform:none}}
