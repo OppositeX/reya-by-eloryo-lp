@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
+import { SITE_URL } from '@/lib/site';
 
 /**
  * Bacley ships with the design system. Loading it through next/font means the
@@ -31,7 +32,7 @@ const dmSans = DM_Sans({
   fallback: ['sans-serif'],
 });
 
-const SITE = 'https://reya-by-eloryo.vercel.app';
+const SITE = SITE_URL;
 const DESCRIPTION =
   '106 private residences in Pervolia, Larnaca. Each home on its own freehold plot with a separate title deed, from €307,000. A development by Eloryo on Cyprus’s southern coast.';
 
