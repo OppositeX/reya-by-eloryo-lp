@@ -106,19 +106,6 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
             alignItems: 'center',
           }}
         >
-          <h2
-            data-vi-el=""
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.6rem,5.6vw,4.5rem)',
-              lineHeight: 1.06,
-              color: 'var(--color-text-primary)',
-              margin: 0,
-            }}
-          >
-            106 residences<span className="reya-res-dot"> • </span>
-            <span className="reya-res-brk"> </span>One address.
-          </h2>
           <p
             data-vi-el=""
             className="reya-mbr"
@@ -149,7 +136,16 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
           >
             Not a managed apartment block. Not a shared scheme.
             <br />
-            <span className="reya-ylb" style={{ fontWeight: 600 }}>
+            <span
+              className="reya-ylb"
+              style={{
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '.04em',
+                display: 'inline-block',
+                marginTop: 18,
+              }}
+            >
               Your land
               <span aria-hidden="true" style={{ margin: '0 0.6em' }}>
                 •

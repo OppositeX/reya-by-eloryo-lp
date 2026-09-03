@@ -40,7 +40,7 @@ export const residences: Residence[] = [
     ],
   },
   {
-    name: 'Clay · Basalt · Marble',
+    name: 'Clay · Marble',
     tagline: 'Earth',
     area: '112 - 126',
     beds: '3',
@@ -82,7 +82,7 @@ export type Gallery = { key: string; label: string; imgs: string[] };
 export const galleries: Gallery[] = [
   {
     key: 'villas',
-    label: 'The Residences',
+    label: 'The Homes',
     imgs: [
       '/assets/photography/villa-exterior-vertical.webp',
       '/assets/photography/standard-garden.webp',
@@ -123,7 +123,7 @@ export const galleries: Gallery[] = [
 export const navLinks = [
   { href: '#vision', label: 'The Vision' },
   { href: '#homes', label: 'The Development' },
-  { href: '#villas', label: 'The Residences' },
+  { href: '#villas', label: 'The Homes' },
   { href: '#location', label: 'Location' },
   { href: '#ownership', label: 'Ownership' },
   { href: '#gallery', label: 'Gallery' },
@@ -139,7 +139,7 @@ export const features = [
 ];
 
 export const stats = [
-  { value: '106', label: 'Private Residences' },
+  { value: '106', label: 'Private Homes' },
   { value: '42,000', label: 'm² of Land' },
   { value: '2-4', label: 'Bedrooms' },
 ];

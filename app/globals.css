@@ -230,6 +230,8 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 /* Residence tabs: element icon sits left of the label on desktop,
    stacked above and centered on mobile (see 880px block) */
 .reya-res-tabs button{display:inline-flex;align-items:center;gap:9px}
+.reya-res-tab:not(.reya-res-tab--active):hover{border-color:var(--color-accent-primary) !important;color:var(--color-text-primary) !important;box-shadow:0 2px 10px rgba(28,20,16,0.08)}
+.reya-res-tab--active{box-shadow:0 2px 12px rgba(28,20,16,0.16)}
 /* ---- responsive / mobile ---- */
 @media(max-width:1200px){
 .reya-resintro{width:auto !important;height:auto !important}
@@ -273,16 +275,16 @@ footer img{height:172px !important}
 .reya-res-cta>div:empty{display:none}
 .reya-res-cta button{width:100% !important}
 .reya-res-cta>a{text-align:center}
-.reya-res-tabs{gap:0 !important;overflow-x:visible;justify-content:space-between}
-.reya-res-tabs button{flex:1;font-size:.95rem !important;margin-right:0 !important;white-space:nowrap;padding:12px 0 !important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px}
+.reya-res-tabs{gap:8px !important;overflow-x:visible;justify-content:space-between}
+.reya-res-tabs button{flex:1;font-size:.95rem !important;margin-right:0 !important;white-space:nowrap;padding:12px 4px !important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px}
 .reya-tab-lbl{display:flex;flex-direction:column;align-items:center;line-height:1.35}
 .reya-tab-lbl .reya-tab-sep{display:none}
 .reya-tab-lbl>span:last-child{font-size:.82rem}
 .reya-mbr br{display:none}
-.reya-presale-bar{font-size:.78rem !important}
+.reya-presale-bar{font-size:clamp(.58rem,2.9vw,.78rem) !important;letter-spacing:.05em !important}
 /* 'Your land • Your deed • Your boundary' — own line on mobile, one line edge
    to edge, never wrapping (the shared .reya-mbr rule hides the <br> above it) */
-.reya-ylb{display:block;white-space:nowrap;margin-top:8px;font-size:min(1.25rem,4.3vw)}
+.reya-ylb{display:block;white-space:nowrap;margin-top:10px;font-size:min(1.25rem,3.9vw)}
 .reya-ylb span{margin:0 .4em !important}
 .reya-vis-head{position:static !important;margin-bottom:6px;text-align:center;align-items:center}
 .reya-vis-copy{position:static !important;max-width:none !important;margin-top:14px !important}

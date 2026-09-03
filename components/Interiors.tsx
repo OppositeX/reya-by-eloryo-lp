@@ -160,7 +160,7 @@ const outdoorCards = [
     alt: 'Private garden and courtyard',
     body: (
       <>
-        Covered veranda and private garden come with every residence,
+        Covered veranda and private garden come with every home,
         <br />
         not as an upgrade or optional extra.
         <br />
@@ -337,38 +337,6 @@ function Outdoor({ onInquire }: { onInquire: () => void }) {
           </div>
         ))}
       </div>
-
-      <p
-        style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: 'calc(var(--text-body) * 1.15)',
-          lineHeight: 1.7,
-          color: 'var(--reya-earth-brown)',
-          margin: 0,
-          textAlign: 'center',
-          maxWidth: '72ch',
-          alignSelf: 'center',
-        }}
-      >
-        Reya is best experienced, not described. Join us for coffee at our newly built sales suite
-        to experience the village and coast first hand.
-      </p>
-      <button
-        type="button"
-        onClick={onInquire}
-        className="reya-cta reya-cta--solid"
-        style={{
-          alignSelf: 'center',
-          marginTop: 22,
-          padding: '17px 40px',
-          fontSize: 'var(--text-body-lg)',
-          fontWeight: 600,
-          letterSpacing: '.08em',
-          textTransform: 'uppercase',
-        }}
-      >
-        Book Your Curated Tour Now
-      </button>
     </div>
   );
 }

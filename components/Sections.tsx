@@ -3,8 +3,8 @@ import { amenities, ownershipCards, residencyCards } from '@/lib/content';
 import { Card, TickIcon } from './ui';
 
 /**
- * The purely static sections. No 'use client' here, so these render to HTML on
- * the server and ship no JavaScript -- this is where the SEO win comes from.
+ * The mostly static sections. No 'use client' here; they compile into the
+ * client boundary of PageShell, and only Beach carries an interactive CTA.
  */
 
 export function Phases() {
@@ -124,7 +124,7 @@ export function Phases() {
             margin: 0,
           }}
         >
-          The first residences are released in the Wheat phase, named after the crop this ground has
+          The first homes are released in the Wheat phase, named after the crop this ground has
           produced for generations &amp; that richness is still here, in the soil, in the community
           and in the heritage around it.
           <br />
@@ -136,7 +136,7 @@ export function Phases() {
   );
 }
 
-export function Beach() {
+export function Beach({ onInquire }: { onInquire: () => void }) {
   return (
     <section
       id="beach"
@@ -251,6 +251,50 @@ export function Beach() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div
+        data-reveal=""
+        style={{
+          opacity: 0,
+          transform: 'translateY(28px)',
+          transition: 'opacity .8s var(--ease-standard),transform .8s var(--ease-standard)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: 'clamp(48px,6vw,72px)',
+        }}
+      >
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'calc(var(--text-body) * 1.15)',
+            fontWeight: 600,
+            lineHeight: 1.7,
+            color: 'var(--reya-earth-brown)',
+            margin: 0,
+            textAlign: 'center',
+            maxWidth: '72ch',
+          }}
+        >
+          Reya is best experienced, not described. Join us for coffee at our newly built sales
+          suite to experience the village and coast first hand.
+        </p>
+        <button
+          type="button"
+          onClick={onInquire}
+          className="reya-cta reya-cta--solid"
+          style={{
+            marginTop: 18,
+            padding: '17px 40px',
+            fontSize: 'var(--text-body-lg)',
+            fontWeight: 600,
+            letterSpacing: '.08em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Book Your Personal Tour Now
+        </button>
       </div>
     </section>
   );

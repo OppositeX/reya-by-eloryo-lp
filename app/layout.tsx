@@ -34,12 +34,12 @@ const dmSans = DM_Sans({
 
 const SITE = SITE_URL;
 const DESCRIPTION =
-  '106 private residences in Pervolia, Larnaca. Each home on its own freehold plot with a separate title deed, from €307,000. A development by Eloryo on Cyprus’s southern coast.';
+  '106 private homes in Pervolia, Larnaca. Each home on its own freehold plot with a separate title deed, from €307,000. A development by Eloryo on Cyprus’s southern coast.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: 'Reya — Residences in Pervolia, Cyprus | by Eloryo',
+    default: 'Reya — Homes in Pervolia, Cyprus | by Eloryo',
     template: '%s | Reya by Eloryo',
   },
   description: DESCRIPTION,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
         url: '/uploads/hero-poster.webp',
         width: 1920,
         height: 1079,
-        alt: 'Reya residences, Pervolia, Cyprus',
+        alt: 'Reya homes, Pervolia, Cyprus',
       },
     ],
   },

@@ -174,7 +174,7 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
                 maxWidth: '48ch',
               }}
             >
-              Book your curated tour of our site and Pervolia to experience the village and coast
+              Book your personal tour of our site and Pervolia to experience the village and coast
               first hand, with full access to view and walk through the development using our in
               house platform.
             </p>

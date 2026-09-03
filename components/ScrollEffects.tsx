@@ -92,6 +92,25 @@ export default function ScrollEffects() {
           lenis.scrollTo(0, { duration: 1.4 });
           return;
         }
+        // Sections whose visual anchor should end up vertically centred rather
+        // than pinned under the header. The selector names the block to centre
+        // (the section itself carries large paddings that would skew it).
+        const centerSel: Record<string, string> = {
+          '#gallery': '#gallery .reya-galstage',
+          '#location': '#location [data-reveal]',
+        };
+        if (centerSel[href]) {
+          const target = document.querySelector(centerSel[href]);
+          if (target) {
+            e.preventDefault();
+            const r = target.getBoundingClientRect();
+            // Centre when the block fits the viewport; otherwise leave room
+            // for the fixed header (38px bar + nav).
+            const gap = Math.max((window.innerHeight - r.height) / 2, 104);
+            lenis.scrollTo(Math.max(window.scrollY + r.top - gap, 0), { duration: 1.4 });
+            return;
+          }
+        }
         const el = document.querySelector(href);
         if (!el) return;
         e.preventDefault();

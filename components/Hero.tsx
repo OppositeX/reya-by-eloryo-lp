@@ -117,17 +117,17 @@ export default function Hero({ onInquire }: { onInquire: () => void }) {
         <span
           style={{
             fontFamily: 'var(--font-body)',
-            fontWeight: 200,
-            fontSize: 'var(--text-eyebrow)',
+            fontWeight: 500,
+            fontSize: 'clamp(0.95rem,1.3vw,1.2rem)',
             letterSpacing: '.24em',
             textTransform: 'uppercase',
             color: '#efeae1',
-            opacity: 0.9,
             textAlign: 'center',
             lineHeight: 1.9,
+            textShadow: '0 1px 14px rgba(28,20,16,0.35)',
           }}
         >
-          Reya residences by Eloryo
+          Reya homes
           <br />
           Pervolia - Larnaca
         </span>
@@ -179,16 +179,16 @@ export default function Hero({ onInquire }: { onInquire: () => void }) {
           alignItems: 'center',
           gap: 8,
           color: '#efeae1',
-          textShadow: '0 1px 12px rgba(28,20,16,0.4)',
+          textShadow: '0 1px 4px rgba(28,20,16,0.75), 0 2px 14px rgba(28,20,16,0.55)',
         }}
       >
         <span
           style={{
             fontFamily: 'var(--font-body)',
-            fontSize: 10,
+            fontSize: 12,
+            fontWeight: 500,
             letterSpacing: '.26em',
             textTransform: 'uppercase',
-            opacity: 0.95,
           }}
         >
           Scroll
@@ -201,8 +201,8 @@ export default function Hero({ onInquire }: { onInquire: () => void }) {
             width: 44,
             height: 44,
             borderRadius: '50%',
-            border: '1px solid rgba(239,234,225,0.75)',
-            background: 'rgba(28,20,16,0.22)',
+            border: '1px solid rgba(239,234,225,0.9)',
+            background: 'rgba(28,20,16,0.45)',
             backdropFilter: 'blur(4px)',
             WebkitBackdropFilter: 'blur(4px)',
           }}

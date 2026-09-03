@@ -132,8 +132,7 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
         role="tablist"
         style={{
           display: 'flex',
-          gap: 8,
-          borderBottom: '1px solid var(--color-border)',
+          gap: 10,
           marginBottom: 26,
           flexWrap: 'nowrap',
         }}
@@ -144,18 +143,18 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
             role="tab"
             aria-selected={i === active}
             onClick={() => setActive(i)}
+            className={`reya-res-tab${i === active ? ' reya-res-tab--active' : ''}`}
             style={{
               fontFamily: 'var(--font-body)',
-              fontWeight: i === active ? 400 : 200,
+              fontWeight: i === active ? 500 : 300,
               fontSize: 'var(--text-body)',
-              background: 'transparent',
-              border: 'none',
-              borderBottom: `2px solid ${i === active ? 'var(--color-accent-primary)' : 'transparent'}`,
-              color: i === active ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
-              padding: '14px 6px',
-              marginRight: i === residenceTabs.length - 1 ? 0 : 22,
+              background: i === active ? 'var(--color-accent-primary)' : 'var(--color-surface)',
+              border: `1px solid ${i === active ? 'var(--color-accent-primary)' : 'var(--color-border-strong)'}`,
+              borderRadius: 'var(--radius)',
+              color: i === active ? 'var(--reya-cream)' : 'var(--color-text-secondary)',
+              padding: '13px 22px',
               cursor: 'pointer',
-              transition: 'color 150ms, border-color 150ms',
+              transition: 'color 150ms, border-color 150ms, background 150ms, box-shadow 150ms',
             }}
           >
             <ElementIcon element={label.split(' · ')[0]} />
