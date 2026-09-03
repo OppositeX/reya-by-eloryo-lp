@@ -111,7 +111,7 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
             className="reya-mbr"
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(1.25rem,1.9vw,1.6rem)',
+              fontSize: 'clamp(1.25rem,2.09vw,1.76rem)',
               lineHeight: 1.7,
               color: 'var(--color-text-secondary)',
               margin: 0,
@@ -128,7 +128,7 @@ export default function Development({ onInquire }: { onInquire: () => void }) {
             className="reya-mbr"
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(1.25rem,1.9vw,1.6rem)',
+              fontSize: 'clamp(1.25rem,2.09vw,1.76rem)',
               lineHeight: 1.7,
               color: 'var(--color-text-secondary)',
               margin: 0,
