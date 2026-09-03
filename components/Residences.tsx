@@ -154,7 +154,7 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
               color: i === active ? 'var(--reya-cream)' : 'var(--color-text-secondary)',
               padding: '13px 22px',
               cursor: 'pointer',
-              transition: 'color 150ms, border-color 150ms, background 150ms, box-shadow 150ms',
+              transition: 'color 80ms, border-color 80ms, background 80ms, box-shadow 80ms',
             }}
           >
             <ElementIcon element={label.split(' · ')[0]} />
