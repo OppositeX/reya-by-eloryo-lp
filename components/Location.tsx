@@ -61,8 +61,8 @@ export default function Location() {
             className="reya-map-mob"
             src="/uploads/mobile-map.webp"
             alt="Illustrated map of Pervolia, Larnaca — Reya location"
-            width={1080}
-            height={928}
+            width={1086}
+            height={1448}
             style={{ display: 'none', width: '100%', height: 'auto' }}
           />
         </div>
