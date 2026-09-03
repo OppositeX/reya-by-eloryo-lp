@@ -53,8 +53,8 @@ export default function ComingSoon() {
         <Image
           src="/uploads/reya-emblem-footer.webp"
           alt="Reya — Your Place to Belong"
-          width={474}
-          height={540}
+          width={476}
+          height={546}
           priority
           style={{ height: 'clamp(190px,30vh,280px)', width: 'auto' }}
         />

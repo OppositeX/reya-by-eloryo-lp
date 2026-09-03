@@ -587,8 +587,8 @@ export function Footer() {
         <Image
           src="/uploads/reya-emblem-footer.webp"
           alt="Reya"
-          width={474}
-          height={540}
+          width={476}
+          height={546}
           style={{ height: 215, width: 'auto' }}
         />
         <div style={{ display: 'flex', gap: 22, justifyContent: 'center' }}>
