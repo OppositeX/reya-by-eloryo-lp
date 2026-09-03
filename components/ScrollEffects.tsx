@@ -17,6 +17,20 @@ export default function ScrollEffects() {
   useEffect(() => {
     // Respect the user's motion preference: reveal everything, animate nothing.
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // The hero (`#top`) is position:sticky, so native fragment navigation and
+    // element-based scrollTo both measure its *stuck* rect and barely move the
+    // page. Any link to #top must scroll to 0 explicitly. Once Lenis owns
+    // anchor clicks (`smooth`), it takes over and this fallback steps aside.
+    let smooth = false;
+    const onLogoTop = (e: MouseEvent) => {
+      if (smooth) return;
+      if (!(e.target as HTMLElement).closest?.('a[href="#top"]')) return;
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    };
+    document.addEventListener('click', onLogoTop);
+
     const revealAll = () =>
       document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
         el.style.opacity = '1';
@@ -34,7 +48,7 @@ export default function ScrollEffects() {
         .querySelectorAll<HTMLElement>('[data-closefill] > span')
         .forEach((el) => (el.style.clipPath = 'inset(0 0 0 0)'));
       document.querySelector('[data-own-cards]')?.classList.add('reya-cards-in');
-      return;
+      return () => document.removeEventListener('click', onLogoTop);
     }
 
     let cleanup: (() => void) | undefined;
@@ -61,6 +75,7 @@ export default function ScrollEffects() {
 
       // --- smooth scrolling -------------------------------------------------
       const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1 });
+      smooth = true;
       let raf = requestAnimationFrame(function tick(t: number) {
         lenis.raf(t);
         raf = requestAnimationFrame(tick);
@@ -72,6 +87,11 @@ export default function ScrollEffects() {
         if (!a) return;
         const href = a.getAttribute('href');
         if (!href || href === '#') return;
+        if (href === '#top') {
+          e.preventDefault();
+          lenis.scrollTo(0, { duration: 1.4 });
+          return;
+        }
         const el = document.querySelector(href);
         if (!el) return;
         e.preventDefault();
@@ -347,6 +367,7 @@ export default function ScrollEffects() {
 
     return () => {
       cancelled = true;
+      document.removeEventListener('click', onLogoTop);
       cleanup?.();
     };
   }, []);
