@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-const LINES = ['Your Cyprus Residence.', 'A life worth', 'returning to.'];
+const LINES = ['Your Cyprus Home.', 'A life worth', 'returning to.'];
 
 /**
  * Both layers MUST lay out identically -- the bright copy is wiped in on top of

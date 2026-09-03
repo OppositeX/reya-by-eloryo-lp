@@ -34,7 +34,7 @@ export default function PageShell() {
       <Phases />
       <Interiors onInquire={openInquire} />
       <Location />
-      <Beach />
+      <Beach onInquire={openInquire} />
       <Ownership />
       <CoastlineBridge />
       <Residency />

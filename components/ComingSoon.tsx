@@ -52,7 +52,7 @@ export default function ComingSoon() {
       >
         <Image
           src="/uploads/reya-emblem-footer.webp"
-          alt="Reya — Your Place in the Sun"
+          alt="Reya — Your Place to Belong"
           width={474}
           height={540}
           priority

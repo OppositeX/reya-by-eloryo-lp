@@ -57,7 +57,13 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
           whiteSpace: 'nowrap',
         }}
       >
-        <span style={{ fontWeight: 500 }}>Pre-sales are now open</span>
+        <span style={{ fontWeight: 500 }}>
+          Construction has started
+          <span aria-hidden="true" style={{ margin: '0 0.7em', opacity: 0.85 }}>
+            •
+          </span>
+          Pre-sales are now open
+        </span>
       </div>
       <nav
         className="reya-nav"
@@ -82,7 +88,7 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
         <a href="#top" style={{ display: 'flex', alignItems: 'center', color: 'inherit' }}>
           <Image
             src="/uploads/reya-logo.webp"
-            alt="Reya — Your place in the sun"
+            alt="Reya — Your place to belong"
             width={761}
             height={238}
             priority
