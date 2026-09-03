@@ -224,6 +224,11 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 .reya-amenity .reya-amdesc{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s var(--ease-standard),opacity .45s var(--ease-standard)}
 .reya-amenity:hover .reya-amdesc{max-height:150px;opacity:.94}
 .reya-loc-row{transition:color 150ms var(--ease-standard),border-color 150ms var(--ease-standard)}
+/* Floating WhatsApp button: bottom-left, above content, below overlays/modals */
+.reya-wa{position:fixed;left:clamp(16px,2vw,28px);bottom:clamp(16px,2vw,28px);z-index:150;width:clamp(52px,4.4vw,68px);height:auto;display:block;line-height:0;filter:drop-shadow(0 6px 18px rgba(28,20,16,0.28));transition:transform 220ms var(--ease-standard),filter 220ms var(--ease-standard)}
+.reya-wa img{width:100%;height:auto;display:block}
+.reya-wa:hover{transform:translateY(-2px) scale(1.05);filter:drop-shadow(0 10px 24px rgba(28,20,16,0.34))}
+@media(max-width:880px){.reya-wa{width:52px;left:14px;bottom:14px}}
 .reya-underline{position:relative}
 .reya-underline::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:width 220ms var(--ease-standard)}
 .reya-underline:hover::after{width:100%}
@@ -254,7 +259,10 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 }
 @media(max-width:880px){
 nav.reya-nav{padding-left:1.25em !important;padding-right:1.25em !important;gap:16px}
-.reya-hero-in{padding-left:1.25em !important;padding-right:1.25em !important}
+.reya-hero-in{padding-left:1.25em !important;padding-right:1.25em !important;padding-top:max(170px,21vh) !important}
+/* Beach CTA on phones: tighter copy, button kept to a single line */
+.reya-beach-cta-p{line-height:1.4 !important}
+.reya-beach-cta-btn{white-space:nowrap;font-size:clamp(.8rem,3.6vw,.95rem) !important;letter-spacing:.06em !important;padding:15px 22px !important}
 section{padding-left:1.25em !important;padding-right:1.25em !important}
 #homes{padding-left:1.25em !important;padding-right:1.25em !important}
 #villas{width:calc(100% + 2.5em) !important;margin-left:-1.25em !important;margin-right:-1.25em !important;padding-left:1.25em !important;padding-right:1.25em !important}

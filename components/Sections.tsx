@@ -267,6 +267,7 @@ export function Beach({ onInquire }: { onInquire: () => void }) {
         }}
       >
         <p
+          className="reya-beach-cta-p"
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'calc(var(--text-body) * 1.15)',
@@ -284,7 +285,7 @@ export function Beach({ onInquire }: { onInquire: () => void }) {
         <button
           type="button"
           onClick={onInquire}
-          className="reya-cta reya-cta--solid"
+          className="reya-cta reya-cta--solid reya-beach-cta-btn"
           style={{
             marginTop: 18,
             padding: '17px 40px',

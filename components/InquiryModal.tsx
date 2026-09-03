@@ -207,17 +207,35 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
                   >
                     {row.label}
                   </span>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontWeight: 200,
-                      fontSize: 'var(--text-body)',
-                      color: 'var(--reya-cream)',
-                      textAlign: 'right',
-                    }}
-                  >
-                    {row.value}
-                  </span>
+                  {row.href ? (
+                    <a
+                      href={row.href}
+                      target={row.href.startsWith('http') ? '_blank' : undefined}
+                      rel={row.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="reya-underline"
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontWeight: 200,
+                        fontSize: 'var(--text-body)',
+                        color: 'var(--reya-cream)',
+                        textAlign: 'right',
+                      }}
+                    >
+                      {row.value}
+                    </a>
+                  ) : (
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontWeight: 200,
+                        fontSize: 'var(--text-body)',
+                        color: 'var(--reya-cream)',
+                        textAlign: 'right',
+                      }}
+                    >
+                      {row.value}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

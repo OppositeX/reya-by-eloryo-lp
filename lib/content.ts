@@ -263,9 +263,16 @@ export const residencyCards = [
   },
 ];
 
-export const salesSuite = [
+export const CONTACT_PHONE = '+35795968718';
+export const CONTACT_PHONE_DISPLAY = '+357 95 968718';
+export const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE}`;
+export const TEL_URL = `tel:${CONTACT_PHONE}`;
+
+export const salesSuite: { label: string; value: string; href?: string }[] = [
   { label: 'Location', value: 'Pervolia, Larnaca · Cyprus' },
   { label: 'Open', value: 'Daily, 10:00 – 17:00' },
+  { label: 'WhatsApp', value: 'Chat with us', href: WHATSAPP_URL },
+  { label: 'Call', value: CONTACT_PHONE_DISPLAY, href: TEL_URL },
 ];
 
 /** Vision section collage, cross-faded on a timer. */
