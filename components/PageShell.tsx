@@ -11,6 +11,7 @@ import Gallery from './Gallery';
 import Closing from './Closing';
 import InquiryModal from './InquiryModal';
 import ScrollEffects from './ScrollEffects';
+import WhatsAppButton from './WhatsAppButton';
 import { Beach, CoastlineBridge, Footer, Ownership, Phases, Residency } from './Sections';
 
 /**
@@ -41,6 +42,7 @@ export default function PageShell() {
       <Gallery />
       <Closing onInquire={openInquire} />
       <Footer />
+      <WhatsAppButton />
       <InquiryModal open={inquireOpen} onClose={closeInquire} />
     </div>
   );
