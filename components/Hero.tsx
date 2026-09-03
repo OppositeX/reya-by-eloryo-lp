@@ -123,7 +123,7 @@ export default function Hero({ onInquire }: { onInquire: () => void }) {
             textTransform: 'uppercase',
             color: '#efeae1',
             textAlign: 'center',
-            lineHeight: 1.9,
+            lineHeight: 1.4,
             textShadow: '0 1px 14px rgba(28,20,16,0.35)',
           }}
         >
