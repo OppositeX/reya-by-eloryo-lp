@@ -190,7 +190,7 @@ export const bentoTiles = [
 export const locationRows = [
   { id: 'beach', name: 'The Beach', detail: '750 m along the coastal promenade' },
   { id: 'faros', name: 'Faros Lighthouse', detail: 'The 19th-century landmark at the peninsula’s tip' },
-  { id: 'airport', name: 'Larnaca Airport', detail: '10 min by car' },
+  { id: 'airport', name: 'Larnaca', detail: '20 min by car' },
   { id: 'cities', name: 'Nicosia & Limassol', detail: '45 min' },
 ];
 
