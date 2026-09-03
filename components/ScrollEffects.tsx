@@ -295,6 +295,10 @@ export default function ScrollEffects() {
             el.style.transform = 'none';
             const kids = [...el.children];
             if (!kids.length) return;
+            // Blocks flagged data-early-reveal (e.g. the beach CTA) finish
+            // revealing shortly after they enter the viewport instead of
+            // scrubbing all the way to the upper third of the screen.
+            const early = el.hasAttribute('data-early-reveal');
             gsap.fromTo(
               kids,
               { y: 45, autoAlpha: 0 },
@@ -303,7 +307,7 @@ export default function ScrollEffects() {
                 autoAlpha: 1,
                 ease: 'power2.out',
                 stagger: 0.14,
-                scrollTrigger: scrub(el, 'top 82%', 'top 30%'),
+                scrollTrigger: scrub(el, early ? 'top 98%' : 'top 82%', early ? 'top 78%' : 'top 30%'),
               },
             );
           });

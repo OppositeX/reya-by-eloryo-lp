@@ -255,6 +255,7 @@ export function Beach({ onInquire }: { onInquire: () => void }) {
 
       <div
         data-reveal=""
+        data-early-reveal=""
         style={{
           opacity: 0,
           transform: 'translateY(28px)',
