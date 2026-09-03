@@ -104,9 +104,12 @@ export default function ScrollEffects() {
           if (target) {
             e.preventDefault();
             const r = target.getBoundingClientRect();
-            // Centre when the block fits the viewport; otherwise leave room
-            // for the fixed header (38px bar + nav).
-            const gap = Math.max((window.innerHeight - r.height) / 2, 104);
+            // Centre within the area BELOW the fixed header (38px bar + nav),
+            // so the block gets visible breathing room instead of landing
+            // flush against the header; keep at least a small gap when the
+            // block barely fits.
+            const headerH = 104;
+            const gap = headerH + Math.max((window.innerHeight - headerH - r.height) / 2, 24);
             lenis.scrollTo(Math.max(window.scrollY + r.top - gap, 0), { duration: 1.4 });
             return;
           }
