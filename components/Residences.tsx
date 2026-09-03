@@ -148,7 +148,7 @@ export default function Residences({ onInquire }: { onInquire: () => void }) {
               fontFamily: 'var(--font-body)',
               fontWeight: i === active ? 500 : 300,
               fontSize: 'var(--text-body)',
-              background: i === active ? 'var(--color-accent-primary)' : 'var(--color-surface)',
+              background: i === active ? 'var(--color-accent-primary)' : 'transparent',
               border: `1px solid ${i === active ? 'var(--color-accent-primary)' : 'var(--color-border-strong)'}`,
               borderRadius: 'var(--radius)',
               color: i === active ? 'var(--reya-cream)' : 'var(--color-text-secondary)',
