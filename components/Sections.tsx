@@ -635,9 +635,10 @@ export function Footer() {
         <div
           style={{
             display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            gap: 12,
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            gap: 6,
             width: '100%',
             marginTop: 12,
             paddingTop: 22,

@@ -167,7 +167,7 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: 'var(--text-body-lg)',
-                lineHeight: 1.7,
+                lineHeight: 1.5,
                 color: 'var(--reya-cream)',
                 opacity: 0.92,
                 margin: 0,
@@ -188,7 +188,7 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
                     justifyContent: 'space-between',
                     alignItems: 'baseline',
                     gap: 16,
-                    padding: '16px 0',
+                    padding: '11px 0',
                     borderTop: '1px solid rgba(243,236,225,0.3)',
                     borderBottom:
                       i === salesSuite.length - 1 ? '1px solid rgba(243,236,225,0.3)' : undefined,
@@ -253,11 +253,11 @@ export default function InquiryModal({ open, onClose }: { open: boolean; onClose
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
               gap: '6px 24px',
-              alignContent: 'start',
+              alignContent: 'center',
               width: '100%',
             }}
           >
-            <div style={{ gridColumn: '1/-1', display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
+            <div style={{ gridColumn: '1/-1', display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14, alignItems: 'center', textAlign: 'center' }}>
               <span
                 className="font-display"
                 style={{
