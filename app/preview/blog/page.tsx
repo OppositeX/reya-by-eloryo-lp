@@ -16,7 +16,7 @@ export default function JournalIndex() {
     <BlogShell>
       <main className="reya-journal">
         <header className="reya-journal-head">
-          <span className="reya-journal-eyebrow">Posts 01 to {String(posts.length).padStart(2, '0')}</span>
+          <span className="reya-journal-eyebrow">Blog</span>
           <h1>The Reya Journal</h1>
         </header>
         <div className="reya-postgrid reya-postgrid--index">

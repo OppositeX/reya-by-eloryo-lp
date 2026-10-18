@@ -432,11 +432,10 @@ h2,h3{overflow-wrap:break-word}
 /* Cards take their colours from the surrounding section's tokens. */
 .reya-postcard{display:flex;flex-direction:column;color:var(--color-text-primary)}
 .reya-postcard:hover{color:var(--color-text-primary)}
-.reya-postcard-img{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius);background:var(--color-surface-sunken)}
+.reya-postcard-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--color-surface-sunken)}
 .reya-postcard-img img{transition:transform .8s var(--ease-standard)}
 .reya-postcard:hover .reya-postcard-img img{transform:scale(1.04)}
-.reya-postcard .reya-postcard-n{margin-top:18px;font-size:var(--text-eyebrow);letter-spacing:.14em;font-weight:300;color:var(--color-accent-primary)}
-.reya-postcard .reya-postcard-title{margin-top:6px;font-size:clamp(1.05rem,1.2vw,1.2rem);line-height:1.4;font-weight:400;color:var(--color-text-primary)}
+.reya-postcard .reya-postcard-title{margin-top:18px;font-size:clamp(1.05rem,1.2vw,1.2rem);line-height:1.4;font-weight:400;color:var(--color-text-primary)}
 .reya-postcard .reya-postcard-more{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:var(--text-body-sm);font-weight:300;color:var(--color-text-primary);opacity:.72;transition:gap .3s var(--ease-standard),opacity .3s var(--ease-standard)}
 .reya-postcard:hover .reya-postcard-more{gap:12px;opacity:1}
 .reya-postgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,2.4vw,40px)}
@@ -450,10 +449,15 @@ h2,h3{overflow-wrap:break-word}
 
 /* Single post — mirrors the PDF layout: photo, journal rule, title, body */
 .reya-post-page{padding:clamp(140px,12vw,170px) 4em clamp(80px,8vw,120px)}
-.reya-post{max-width:780px;margin:0 auto}
-.reya-post-hero{border-radius:var(--radius);overflow:hidden;background:var(--color-surface-sunken)}
+/* Desktop: text column plus a sticky booking card on the right. Below 1060px
+   the card drops to the end of the article (areas main -> side -> end). */
+.reya-post{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 320px;column-gap:clamp(40px,5vw,72px);grid-template-areas:"main side" "end side"}
+.reya-post-main{grid-area:main;min-width:0}
+.reya-post-end{grid-area:end;min-width:0}
+.reya-post-side{grid-area:side;align-self:start;position:sticky;top:131px}
+.reya-post-hero{overflow:hidden;background:var(--color-surface-sunken)}
 .reya-post-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:clamp(22px,3vw,32px);padding-bottom:16px;border-bottom:1px solid oklch(from var(--reya-soft-clay) l c h / 0.45)}
-.reya-post .reya-post-back,.reya-post .reya-post-count{font-size:var(--text-eyebrow);letter-spacing:.14em;text-transform:uppercase;font-weight:300;color:var(--reya-soft-clay)}
+.reya-post .reya-post-back{font-size:var(--text-eyebrow);letter-spacing:.14em;text-transform:uppercase;font-weight:300;color:var(--reya-soft-clay)}
 .reya-post .reya-post-back{display:inline-flex;align-items:center;gap:10px;transition:gap .3s var(--ease-standard),color .2s}
 .reya-post .reya-post-back:hover{gap:14px;color:var(--color-accent-primary-hover)}
 .reya-post .reya-post-title{font-family:var(--font-display);font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.12;color:var(--color-text-primary);margin:clamp(26px,3.4vw,40px) 0 clamp(22px,3vw,34px)}
@@ -467,12 +471,11 @@ h2,h3{overflow-wrap:break-word}
 .reya-post li::marker{color:var(--reya-soft-clay)}
 .reya-post .reya-post-answer{border-left:3px solid var(--reya-soft-clay);padding:6px 0 6px clamp(18px,2.4vw,24px);margin:.4em 0 1.9em}
 .reya-post .reya-post-answer p{font-size:clamp(1.15rem,1.7vw,1.32rem);line-height:1.6;margin:0}
-.reya-post .reya-post-cta{display:flex;align-items:center;justify-content:space-between;gap:20px 36px;flex-wrap:wrap;background:var(--color-bg-alt);border:1px solid var(--color-border);border-radius:var(--radius);padding:clamp(24px,3.4vw,36px);margin:clamp(40px,5vw,56px) 0 18px}
-.reya-post .reya-post-cta>div{flex:1 1 360px}
+.reya-post .reya-post-cta{display:flex;flex-direction:column;gap:22px;background:var(--color-bg-alt);border:1px solid var(--color-border);border-radius:var(--radius);padding:clamp(24px,2.4vw,32px)}
 .reya-post .reya-post-cta p{margin:0}
 .reya-post .reya-post-cta .reya-post-cta-title{font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:clamp(1.3rem,2vw,1.55rem);line-height:1.2;margin-bottom:10px}
-.reya-post .reya-post-book{font-size:var(--text-body);font-weight:300;padding:14px 30px;white-space:nowrap}
-.reya-post .reya-post-note{font-style:italic;font-size:.85rem;line-height:1.6;color:var(--color-text-muted)}
+.reya-post .reya-post-book{width:100%;font-size:var(--text-body);font-weight:300;padding:14px 30px;white-space:nowrap}
+.reya-post .reya-post-note{margin-top:clamp(28px,3vw,40px);font-style:italic;font-size:.85rem;line-height:1.6;color:var(--color-text-muted)}
 .reya-post-pager{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:clamp(48px,6vw,72px);padding-top:28px;border-top:1px solid var(--color-border)}
 .reya-post-pager a{display:flex;flex-direction:column;gap:8px;color:var(--color-text-primary)}
 .reya-post-pager a:hover{color:var(--color-text-primary)}
@@ -496,7 +499,6 @@ h2,h3{overflow-wrap:break-word}
 .reya-postgrid--rail>*{scroll-snap-align:start}
 .reya-post-pager{grid-template-columns:1fr}
 .reya-post-pager .reya-post-pager-next{text-align:left;align-items:flex-start}
-.reya-post .reya-post-book{width:100%}
 }
 
 /* Header at laptop widths: eight links plus the CTA need tighter spacing to
@@ -507,4 +509,7 @@ nav.reya-nav{padding-left:2.5em !important;padding-right:2.5em !important;gap:24
 .reya-nav-links a{font-size:.875rem !important;white-space:nowrap}
 nav.reya-nav .reya-cta{white-space:nowrap}
 }
-@media(max-width:1060px){.reya-nav-links{display:none !important}.reya-nav-burger{display:inline-flex !important}}
+@media(max-width:1060px){.reya-nav-links{display:none !important}.reya-nav-burger{display:inline-flex !important}
+.reya-post{max-width:780px;grid-template-columns:minmax(0,1fr);grid-template-areas:"main" "side" "end"}
+.reya-post-side{position:static;margin-top:clamp(36px,5vw,52px)}
+}

@@ -409,5 +409,3 @@ export function postDescription(post: Post): string {
   const para = post.blocks.find((b) => b.t === 'p' && !b.text.endsWith(':'));
   return para && para.t === 'p' ? para.text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') : post.title;
 }
-
-export const postNumber = (post: Post) => String(post.n).padStart(2, '0');

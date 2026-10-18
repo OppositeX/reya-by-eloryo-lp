@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { type Post, postHref, postNumber } from '@/lib/blog';
+import { type Post, postHref } from '@/lib/blog';
 
 /**
  * Colours come from the surrounding section's tokens, so the same card reads
@@ -20,7 +20,6 @@ export default function BlogCard({
       <div className="reya-postcard-img">
         <Image src={post.image.src} alt={post.image.alt} fill sizes={sizes} priority={priority} style={{ objectFit: 'cover' }} />
       </div>
-      <span className="reya-postcard-n">{postNumber(post)}</span>
       <span className="reya-postcard-title">{post.title}</span>
       <span className="reya-postcard-more">
         Read article
