@@ -594,9 +594,8 @@ function FaqEntry({ item, index }: { item: FaqItem; index: number }) {
           {item.q}
         </span>
         <span className="reya-faq-x" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25">
-            <line x1="8" y1="1" x2="8" y2="15" />
-            <line x1="1" y1="8" x2="15" y2="8" />
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 5.5l5 5 5-5" />
           </svg>
         </span>
       </summary>
@@ -669,7 +668,7 @@ export function Faq() {
         ['--color-text-primary' as string]: '#FBF7EF',
         ['--color-text-secondary' as string]: 'oklch(from var(--reya-cream) l c h / 0.92)',
         ['--color-border' as string]: 'oklch(from var(--reya-cream) l c h / 0.4)',
-        ['--color-accent-primary' as string]: 'var(--reya-earth-brown)',
+        ['--color-accent-primary' as string]: '#FBF7EF',
         padding: 'clamp(90px,10vw,140px) 4em',
       }}
     >

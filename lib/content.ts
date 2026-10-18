@@ -127,6 +127,7 @@ export const navLinks = [
   { href: '#location', label: 'Location' },
   { href: '#ownership', label: 'Ownership' },
   { href: '#gallery', label: 'Gallery' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 /** Rotating feature list + the image each one reveals. */
