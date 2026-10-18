@@ -12,7 +12,7 @@ import Closing from './Closing';
 import InquiryModal from './InquiryModal';
 import ScrollEffects from './ScrollEffects';
 import WhatsAppButton from './WhatsAppButton';
-import { Beach, CoastlineBridge, Footer, Ownership, Phases, Residency } from './Sections';
+import { Beach, CoastlineBridge, Faq, Footer, Ownership, Phases, Residency } from './Sections';
 
 /**
  * Composes the page and owns the one piece of state shared across sections:
@@ -40,6 +40,7 @@ export default function PageShell() {
       <CoastlineBridge />
       <Residency />
       <Gallery />
+      <Faq />
       <Closing onInquire={openInquire} />
       <Footer />
       <WhatsAppButton />

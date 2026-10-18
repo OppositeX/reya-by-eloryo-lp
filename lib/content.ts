@@ -275,6 +275,109 @@ export const salesSuite: { label: string; value: string; href?: string }[] = [
   { label: 'Call', value: CONTACT_PHONE_DISPLAY, href: TEL_URL },
 ];
 
+/** FAQ accordion. `lead` is the short verdict shown bold above the answer. */
+export type FaqItem = { q: string; lead?: string; a: string[] };
+
+export const faqItems: FaqItem[] = [
+  {
+    q: 'What is Reya?',
+    a: [
+      'Reya is the latest chapter in the Pervolia village story. 106 modern homes add a new neighbourhood to the coastal village in Larnaca, Cyprus.',
+      'The site runs to 42,000 m², the beach is 750 m away, and every home sits on its own private plot. Construction has started and pre-sales are open.',
+    ],
+  },
+  {
+    q: 'Who is the developer, and what have you built before?',
+    a: [
+      'Eloryo is the developer breathing life into the Reya project and has been building residential property since 2011, across five countries including Cyprus, the United Kingdom, Spain & Greece, with roots back to 1998. www.eloryo.com',
+      'Reya is designed by J+A Philippou Architects, Nicosia.',
+    ],
+  },
+  {
+    q: 'Are the homes freehold / full title?',
+    lead: 'Yes.',
+    a: [
+      'Every home at Reya sits on its own individual plot and will hold its own separate full title deed. Not an apartment scheme, not a shared complex, no fractional ownership. Your land, your deed, your place to belong.',
+    ],
+  },
+  {
+    q: 'Do the prices include VAT?',
+    lead: 'No.',
+    a: [
+      'Every price we publish excludes VAT.',
+      'The standard rate on new-build property in Cyprus is 19%. A reduced rate of 5% may apply where the home will be your primary and permanent residence in Cyprus. Eligibility depends on your circumstances and is confirmed by your own tax adviser.',
+    ],
+  },
+  {
+    q: 'What is the process from enquiry to owning the home?',
+    a: [
+      '1. Enquire and visit, in person or remotely.',
+      '2. Select your home, sign the reservation agreement & pay the reservation fee (1.5% of the purchase price, which forms part of the price, followed by a 7-day cooling-off period).',
+      '3. Your own lawyer reviews the Sale and Purchase Agreement, you sign, and it is registered at the Cyprus Land Registry.',
+      '4. The payment plan follows the construction programme. Funds flow with progress.',
+      '5. Handover & move in.',
+      'Your title deed follows from the Land Registry, with your ownership registered and enforceable from exchange in the meantime.',
+    ],
+  },
+  {
+    q: 'Is my money protected?',
+    lead: 'Yes.',
+    a: [
+      'Your Sale and Purchase Agreement is registered at the Cyprus Land Registry under the Specific Performance law.',
+      'This gives you an enforceable right to the property itself, not just a claim against a company — the strongest protection available to an off-plan buyer in Cyprus.',
+    ],
+  },
+  {
+    q: 'When do I get the title deed?',
+    a: [
+      'The deed follows once construction is certified and the plot surveyed. It works to the Land Registry’s timescale and can take several years.',
+      'The delays you have heard about come from schemes where the plots were never divided. Ours are divided upfront.',
+    ],
+  },
+  {
+    q: 'Does buying at Reya qualify me for Cyprus Permanent Residency?',
+    lead: 'It can.',
+    a: [
+      'Cyprus Permanent Residency via property acquisition is open to non-EU nationals buying a new-build property directly from a developer. The property threshold is €300,000 net of VAT, and every home at Reya clears it. A spouse and dependent children are usually included on the same application.',
+      'Eligibility depends on your circumstances and the programme is subject to government policy.',
+    ],
+  },
+  {
+    q: 'Do I need to be in Cyprus to buy?',
+    lead: 'No.',
+    a: [
+      'You can give power of attorney to a Cyprus lawyer to act for you and complete the purchase without you being in the country. Non-EU buyers apply for permission to acquire property, which your lawyer handles alongside the purchase.',
+    ],
+  },
+  {
+    q: 'Can I get a mortgage in Cyprus as a non-resident?',
+    lead: 'Yes.',
+    a: ['Several Cyprus banks lend to non-residents, with loan-to-value and rates depending on your profile.'],
+  },
+  {
+    q: 'Can I rent the home out when I am not using it?',
+    lead: 'Yes.',
+    a: [
+      'At the standard VAT rate, let it short or long term as you wish.',
+      'At the reduced VAT rate you can still let it, but it has cost implications. The 5% VAT is tied to the home being your own primary residence for ten years. Letting it inside that period counts as a change of use & you will be required to repay the difference between the two rates for the years remaining.',
+    ],
+  },
+  {
+    q: 'How far is Reya from the beach and Larnaca, and is Pervolia a real village year round?',
+    a: [
+      'The beach is 750 m away. Larnaca is 20 minutes by car. Nicosia and Limassol are both about 45 minutes.',
+      'Pervolia is a quaint village, not a resort strip. Shops, tavernas, a supermarket and a post office are within walking distance, and bustling Kiti is five minutes away by car.',
+    ],
+  },
+  {
+    q: 'Can I see it before it is built?',
+    lead: 'Yes.',
+    a: [
+      'Our sales suite in Pervolia is open by appointment. Come for a coffee, walk the site, see the village and the coast, and view any home through our in-house platform. If you cannot travel, we will run a guided walkthrough remotely. Floor plans, the site plan and renders are all available. Enquire and we will confirm the same day.',
+    ],
+  },
+];
+
 /** Vision section collage, cross-faded on a timer. */
 export const visionImages = [
   { src: '/uploads/villas-olive-dusk.webp', alt: 'Reya villas among olive trees at dusk' },

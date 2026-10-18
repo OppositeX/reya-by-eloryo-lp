@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { amenities, ownershipCards, residencyCards } from '@/lib/content';
+import { amenities, faqItems, ownershipCards, residencyCards, type FaqItem } from '@/lib/content';
 import { Card, TickIcon } from './ui';
 
 /**
@@ -560,6 +560,172 @@ export function Residency() {
           <br />
           This page is not intended as legal or financial advice.
         </p>
+      </div>
+    </section>
+  );
+}
+
+/** One FAQ entry: native <details> so the accordion works with zero JS. */
+function FaqEntry({ item, index }: { item: FaqItem; index: number }) {
+  return (
+    <details className="reya-faq-item">
+      <summary>
+        <span
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontWeight: 200,
+            fontSize: 'var(--text-body-sm)',
+            letterSpacing: '.08em',
+            color: 'var(--color-accent-primary)',
+            minWidth: 30,
+          }}
+        >
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <span
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(1.15rem,1.5vw,1.45rem)',
+            lineHeight: 1.25,
+            color: 'var(--color-text-primary)',
+          }}
+        >
+          {item.q}
+        </span>
+        <span className="reya-faq-x" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25">
+            <line x1="8" y1="1" x2="8" y2="15" />
+            <line x1="1" y1="8" x2="15" y2="8" />
+          </svg>
+        </span>
+      </summary>
+      <div style={{ padding: '0 34px 24px 44px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {item.lead && (
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontWeight: 500,
+              fontSize: 'var(--text-body)',
+              color: 'var(--color-text-primary)',
+              margin: 0,
+            }}
+          >
+            {item.lead}
+          </p>
+        )}
+        {item.a.map((p) => (
+          <p
+            key={p}
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontWeight: 300,
+              fontSize: 'var(--text-body)',
+              lineHeight: 1.65,
+              color: 'var(--color-text-secondary)',
+              margin: 0,
+            }}
+          >
+            {p.includes('www.eloryo.com')
+              ? p.split('www.eloryo.com').map((part, i, arr) =>
+                  i < arr.length - 1 ? (
+                    <span key={part}>
+                      {part}
+                      <a
+                        href="https://www.eloryo.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          color: 'var(--color-accent-primary)',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: 3,
+                        }}
+                      >
+                        www.eloryo.com
+                      </a>
+                    </span>
+                  ) : (
+                    part
+                  ),
+                )
+              : p}
+          </p>
+        ))}
+      </div>
+    </details>
+  );
+}
+
+export function Faq() {
+  const mid = Math.ceil(faqItems.length / 2);
+  const columns = [faqItems.slice(0, mid), faqItems.slice(mid)];
+  return (
+    <section
+      id="faq"
+      data-screen-label="FAQ"
+      style={{
+        scrollMarginTop: 96,
+        background: 'var(--color-bg)',
+        padding: 'clamp(90px,10vw,140px) 4em',
+      }}
+    >
+      <div
+        data-reveal=""
+        style={{
+          opacity: 0,
+          transform: 'translateY(28px)',
+          transition: 'opacity .8s var(--ease-standard),transform .8s var(--ease-standard)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 14,
+          maxWidth: 1200,
+          marginBottom: 'clamp(32px,5vw,48px)',
+        }}
+      >
+        <span
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontWeight: 200,
+            fontSize: 'var(--text-eyebrow)',
+            letterSpacing: '.14em',
+            textTransform: 'uppercase',
+            color: 'var(--color-accent-primary)',
+          }}
+        >
+          FAQ
+        </span>
+        <h2
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(2.6rem,5.6vw,4.5rem)',
+            lineHeight: 1.08,
+            color: 'var(--color-text-primary)',
+            margin: 0,
+          }}
+        >
+          Asked and answered.
+        </h2>
+      </div>
+
+      <div
+        data-reveal=""
+        className="reya-faq-grid"
+        style={{
+          opacity: 0,
+          transform: 'translateY(28px)',
+          transition: 'opacity .8s var(--ease-standard),transform .8s var(--ease-standard)',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '0 clamp(32px,5vw,72px)',
+          alignItems: 'start',
+        }}
+      >
+        {columns.map((col, c) => (
+          <div key={c} style={{ display: 'flex', flexDirection: 'column' }}>
+            {col.map((item, i) => (
+              <FaqEntry key={item.q} item={item} index={c * mid + i} />
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );

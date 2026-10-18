@@ -232,6 +232,13 @@ footer input::placeholder{color:var(--reya-cream);opacity:.85}
 .reya-underline{position:relative}
 .reya-underline::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:width 220ms var(--ease-standard)}
 .reya-underline:hover::after{width:100%}
+/* FAQ accordion (native <details>) */
+.reya-faq-item{border-bottom:1px solid var(--color-border)}
+.reya-faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:14px;padding:20px 0}
+.reya-faq-item summary::-webkit-details-marker{display:none}
+.reya-faq-item summary:hover .reya-faq-x{color:var(--color-text-primary)}
+.reya-faq-x{margin-left:auto;align-self:center;display:inline-flex;color:var(--color-accent-primary);transition:transform .3s var(--ease-standard),color .2s}
+.reya-faq-item[open] .reya-faq-x{transform:rotate(45deg)}
 /* Residence tabs: element icon sits left of the label on desktop,
    stacked above and centered on mobile (see 880px block) */
 .reya-res-tabs button{display:inline-flex;align-items:center;gap:9px}
@@ -289,6 +296,9 @@ footer img{height:172px !important}
 .reya-tab-lbl .reya-tab-sep{display:none}
 .reya-tab-lbl>span:last-child{font-size:.82rem}
 .reya-mbr br{display:none}
+.reya-faq-grid{grid-template-columns:1fr !important}
+.reya-faq-item summary span:nth-child(2){font-size:1.1rem !important}
+.reya-faq-item summary+div{padding-right:0 !important}
 .reya-presale-bar{font-size:clamp(.58rem,2.9vw,.78rem) !important;letter-spacing:.05em !important}
 /* 'Your land • Your deed • Your boundary' — own line on mobile, one line edge
    to edge, never wrapping (the shared .reya-mbr rule hides the <br> above it) */
