@@ -109,7 +109,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 width={post.image.width}
                 height={post.image.height}
                 sizes="(max-width: 860px) 100vw, (max-width: 1060px) 780px, 820px"
-                priority
+                quality={90}
+                preload
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               />
             </div>

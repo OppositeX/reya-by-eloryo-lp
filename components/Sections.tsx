@@ -805,7 +805,7 @@ export function Journal() {
             <BlogCard
               key={post.slug}
               post={post}
-              sizes="(max-width: 640px) 78vw, (max-width: 1100px) 50vw, 25vw"
+              sizes="(max-width: 640px) 85vw, (max-width: 1100px) 50vw, 30vw"
             />
           ))}
         </div>

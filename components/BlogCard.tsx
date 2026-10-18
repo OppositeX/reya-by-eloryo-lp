@@ -9,16 +9,24 @@ import { type Post, postHref } from '@/lib/blog';
 export default function BlogCard({
   post,
   sizes,
-  priority = false,
+  eager = false,
 }: {
   post: Post;
   sizes: string;
-  priority?: boolean;
+  eager?: boolean;
 }) {
   return (
     <Link href={postHref(post.slug)} className="reya-postcard">
       <div className="reya-postcard-img">
-        <Image src={post.image.src} alt={post.image.alt} fill sizes={sizes} priority={priority} style={{ objectFit: 'cover' }} />
+        <Image
+          src={post.image.src}
+          alt={post.image.alt}
+          fill
+          sizes={sizes}
+          quality={90}
+          loading={eager ? 'eager' : undefined}
+          style={{ objectFit: 'cover' }}
+        />
       </div>
       <span className="reya-postcard-title">{post.title}</span>
       <span className="reya-postcard-more">
