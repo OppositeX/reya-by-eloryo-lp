@@ -514,3 +514,15 @@ nav.reya-nav .reya-cta{white-space:nowrap}
 .reya-post{max-width:780px;grid-template-columns:minmax(0,1fr);grid-template-areas:"main" "side" "end"}
 .reya-post-side{position:static;margin-top:clamp(36px,5vw,52px)}
 }
+
+/* Vision collage on tablets/phones: fill the box instead of centring with
+   left/top 50% + translate(-50%,-50%). On an auto-height aspect-ratio box that
+   centring lands off-centre in iOS Safari. Phones get a 4:3 frame that
+   matches the photo (the 880px height rule above otherwise wins). */
+@media(max-width:880px){
+#vision .reya-col-main{inset:0;left:0;top:0;transform:none;width:100%;height:100%}
+}
+@media(max-width:640px){
+#vision .reya-collage{height:auto;aspect-ratio:4/3}
+#vision .reya-col-main{aspect-ratio:auto}
+}
