@@ -584,9 +584,10 @@ function FaqEntry({ item, index }: { item: FaqItem; index: number }) {
         </span>
         <span
           style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.15rem,1.5vw,1.45rem)',
-            lineHeight: 1.25,
+            fontFamily: 'var(--font-body)',
+            fontWeight: 400,
+            fontSize: 'clamp(1.05rem,1.3vw,1.25rem)',
+            lineHeight: 1.35,
             color: 'var(--color-text-primary)',
           }}
         >
@@ -664,7 +665,11 @@ export function Faq() {
       data-screen-label="FAQ"
       style={{
         scrollMarginTop: 96,
-        background: 'var(--color-bg)',
+        background: '#ad9573',
+        ['--color-text-primary' as string]: '#FBF7EF',
+        ['--color-text-secondary' as string]: 'oklch(from var(--reya-cream) l c h / 0.92)',
+        ['--color-border' as string]: 'oklch(from var(--reya-cream) l c h / 0.4)',
+        ['--color-accent-primary' as string]: 'var(--reya-earth-brown)',
         padding: 'clamp(90px,10vw,140px) 4em',
       }}
     >
