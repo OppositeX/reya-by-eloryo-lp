@@ -61,10 +61,11 @@ export default function Closing({ onInquire }: { onInquire: () => void }) {
           left: '50%',
           top: '50%',
           transform: 'translate(-50%,-50%)',
-          width: '100%',
+          // Always span the full viewport width so the side ornaments touch
+          // the screen edges; the section's overflow crops any vertical excess.
+          width: '100vw',
+          maxWidth: 'none',
           height: 'auto',
-          maxHeight: '100%',
-          objectFit: 'contain',
           mixBlendMode: 'multiply',
           opacity: 0.42,
           pointerEvents: 'none',
