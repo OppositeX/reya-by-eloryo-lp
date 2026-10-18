@@ -269,8 +269,16 @@ export const residencyCards = [
 
 export const CONTACT_PHONE = '+35795968718';
 export const CONTACT_PHONE_DISPLAY = '+357 95 968718';
-export const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE}`;
+// wa.me takes the number as bare digits; a leading + makes WhatsApp reject it as invalid.
+export const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE.replace(/\D/g, '')}`;
 export const TEL_URL = `tel:${CONTACT_PHONE}`;
+
+/** Footer social icons. An icon is shown only once its URL is filled in. */
+export const socialLinks: { label: 'Instagram' | 'LinkedIn' | 'YouTube'; url: string }[] = [
+  { label: 'Instagram', url: '' },
+  { label: 'LinkedIn', url: '' },
+  { label: 'YouTube', url: '' },
+];
 
 export const salesSuite: { label: string; value: string; href?: string }[] = [
   { label: 'Location', value: 'Pervolia, Larnaca · Cyprus' },

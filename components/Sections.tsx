@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { amenities, faqItems, ownershipCards, residencyCards, type FaqItem } from '@/lib/content';
+import { amenities, faqItems, ownershipCards, residencyCards, socialLinks, type FaqItem } from '@/lib/content';
 import { BLOG_PATH, posts } from '@/lib/blog';
 import BlogCard from './BlogCard';
 import { Card, TickIcon } from './ui';
@@ -823,6 +823,30 @@ export function Journal() {
   );
 }
 
+const SOCIAL_ICONS = {
+  Instagram: (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  LinkedIn: (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <line x1="7" y1="10" x2="7" y2="17" />
+      <circle cx="7" cy="6.5" r="0.6" fill="currentColor" />
+      <path d="M11 17v-4a2.5 2.5 0 0 1 5 0v4M11 10v7" />
+    </svg>
+  ),
+  YouTube: (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="6" width="18" height="12" rx="3.5" />
+      <path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+};
+
 export function Footer() {
   return (
     <footer
@@ -849,29 +873,25 @@ export function Footer() {
           height={546}
           style={{ height: 215, width: 'auto' }}
         />
-        <div style={{ display: 'flex', gap: 22, justifyContent: 'center' }}>
-          <a href="#" aria-label="Instagram" style={{ color: 'var(--reya-cream)', opacity: 0.8 }}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-            </svg>
-          </a>
-          <a href="#" aria-label="LinkedIn" style={{ color: 'var(--reya-cream)', opacity: 0.8 }}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="3" />
-              <line x1="7" y1="10" x2="7" y2="17" />
-              <circle cx="7" cy="6.5" r="0.6" fill="currentColor" />
-              <path d="M11 17v-4a2.5 2.5 0 0 1 5 0v4M11 10v7" />
-            </svg>
-          </a>
-          <a href="#" aria-label="YouTube" style={{ color: 'var(--reya-cream)', opacity: 0.8 }}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="6" width="18" height="12" rx="3.5" />
-              <path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none" />
-            </svg>
-          </a>
-        </div>
+        {socialLinks.some((s) => s.url) && (
+          <div style={{ display: 'flex', gap: 4, justifyContent: 'center' }}>
+            {socialLinks
+              .filter((s) => s.url)
+              .map((s) => (
+                <a
+                  key={s.label}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  // 9px padding around the 26px icon gives a 44px tap target.
+                  style={{ color: 'var(--reya-cream)', opacity: 0.8, padding: 9, display: 'inline-flex' }}
+                >
+                  {SOCIAL_ICONS[s.label]}
+                </a>
+              ))}
+          </div>
+        )}
 
         <p
           style={{

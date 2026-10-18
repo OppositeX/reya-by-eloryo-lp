@@ -17,6 +17,10 @@ export default function Gallery() {
   const [fullIdx, setFullIdx] = useState(0);
 
   const gal = galleries[cat];
+  const openFull = () => {
+    setFullIdx(idx[cat]);
+    setFullOpen(true);
+  };
   // Read the latest state inside the interval without resetting it every tick.
   const state = useRef({ cat, idx, fullOpen });
   state.current = { cat, idx, fullOpen };
@@ -78,7 +82,22 @@ export default function Gallery() {
           background: 'var(--reya-earth-brown)',
         }}
       >
-        <div className="reya-galimgbox" style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        {/* The photo itself opens the full-screen view: on mobile the category
+            title that also does this is hidden, so it is the only way in. */}
+        <div
+          className="reya-galimgbox"
+          role="button"
+          tabIndex={0}
+          aria-label={`View ${gal.label} full screen`}
+          onClick={openFull}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openFull();
+            }
+          }}
+          style={{ position: 'absolute', inset: 0, overflow: 'hidden', cursor: 'zoom-in' }}
+        >
           {galleries.map((g, gi) =>
             g.imgs.map((src, ii) => (
               <Image
@@ -283,10 +302,7 @@ export default function Gallery() {
             </button>
           </div>
           <h3
-            onClick={() => {
-              setFullIdx(idx[cat]);
-              setFullOpen(true);
-            }}
+            onClick={openFull}
             style={{
               margin: 0,
               fontFamily: 'var(--font-display)',

@@ -356,7 +356,7 @@ footer img{height:172px !important}
 .reya-galside{position:static !important;order:2;display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:flex-end;width:100%;gap:10px !important;margin-top:-46px;padding:0 12px 0 0;z-index:5;pointer-events:none;position:relative !important}
 .reya-galside>div{pointer-events:auto;gap:10px !important}
 .reya-galside h3{display:none}
-.reya-galstage .reya-fullarrow{width:34px !important;height:34px !important}
+.reya-galstage .reya-fullarrow{width:40px !important;height:40px !important}
 .reya-galstage .reya-fullarrow svg{width:15px;height:15px}
 .reya-galimgbox{order:2}
 }
@@ -458,7 +458,7 @@ h2,h3{overflow-wrap:break-word}
 .reya-post-hero{overflow:hidden;background:var(--color-surface-sunken)}
 .reya-post-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:clamp(22px,3vw,32px);padding-bottom:16px;border-bottom:1px solid oklch(from var(--reya-soft-clay) l c h / 0.45)}
 .reya-post .reya-post-back{font-size:var(--text-eyebrow);letter-spacing:.14em;text-transform:uppercase;font-weight:300;color:var(--reya-soft-clay)}
-.reya-post .reya-post-back{display:inline-flex;align-items:center;gap:10px;transition:gap .3s var(--ease-standard),color .2s}
+.reya-post .reya-post-back{display:inline-flex;align-items:center;gap:10px;padding:12px 0;margin:-12px 0;transition:gap .3s var(--ease-standard),color .2s}
 .reya-post .reya-post-back:hover{gap:14px;color:var(--color-accent-primary-hover)}
 .reya-post .reya-post-title{font-family:var(--font-display);font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.12;color:var(--color-text-primary);margin:clamp(26px,3.4vw,40px) 0 clamp(22px,3vw,34px)}
 .reya-post h2{text-transform:none;font-family:var(--font-body);font-weight:500;font-size:1.15rem;line-height:1.4;color:var(--reya-dusk-teal);margin:2.1em 0 .55em}
@@ -489,6 +489,7 @@ h2,h3{overflow-wrap:break-word}
 }
 @media(max-width:880px){
 .reya-journal{padding-left:1.25em;padding-right:1.25em}
+#blog{padding-bottom:40px !important}
 .reya-post-page{padding-left:1.25em !important;padding-right:1.25em !important}
 }
 @media(max-width:640px){
