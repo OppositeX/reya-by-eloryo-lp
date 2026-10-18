@@ -6,6 +6,8 @@
  * seam to swap for a CMS later.
  */
 
+import { BLOG_PATH } from './blog';
+
 export type Residence = {
   name: string;
   tagline: string;
@@ -128,6 +130,7 @@ export const navLinks = [
   { href: '#ownership', label: 'Ownership' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#faq', label: 'FAQ' },
+  { href: BLOG_PATH, label: 'Blog' },
 ];
 
 /** Rotating feature list + the image each one reveals. */

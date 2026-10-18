@@ -1,6 +1,18 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { amenities, faqItems, ownershipCards, residencyCards, type FaqItem } from '@/lib/content';
+import { BLOG_PATH, posts } from '@/lib/blog';
+import BlogCard from './BlogCard';
 import { Card, TickIcon } from './ui';
+
+/** Tan ground shared by the FAQ, the journal teaser and the closing section, with cream text. */
+const ON_TAN = {
+  background: '#ad9573',
+  ['--color-text-primary' as string]: '#FBF7EF',
+  ['--color-text-secondary' as string]: 'oklch(from var(--reya-cream) l c h / 0.92)',
+  ['--color-border' as string]: 'oklch(from var(--reya-cream) l c h / 0.4)',
+  ['--color-accent-primary' as string]: '#FBF7EF',
+};
 
 /**
  * The mostly static sections. No 'use client' here; they compile into the
@@ -664,11 +676,7 @@ export function Faq() {
       data-screen-label="FAQ"
       style={{
         scrollMarginTop: 96,
-        background: '#ad9573',
-        ['--color-text-primary' as string]: '#FBF7EF',
-        ['--color-text-secondary' as string]: 'oklch(from var(--reya-cream) l c h / 0.92)',
-        ['--color-border' as string]: 'oklch(from var(--reya-cream) l c h / 0.4)',
-        ['--color-accent-primary' as string]: '#FBF7EF',
+        ...ON_TAN,
         padding: 'clamp(90px,10vw,140px) 4em',
       }}
     >
@@ -730,6 +738,86 @@ export function Faq() {
             ))}
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+/** Latest journal posts, on the same tan ground as the FAQ and the closing section around it. */
+export function Journal() {
+  return (
+    <section
+      id="blog"
+      data-screen-label="Blog"
+      style={{
+        scrollMarginTop: 96,
+        ...ON_TAN,
+        padding: 'clamp(24px,4vw,48px) 4em clamp(90px,10vw,140px)',
+      }}
+    >
+      <div
+        data-reveal=""
+        style={{
+          opacity: 0,
+          transform: 'translateY(28px)',
+          transition: 'opacity .8s var(--ease-standard),transform .8s var(--ease-standard)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 14,
+          marginBottom: 'clamp(32px,5vw,48px)',
+        }}
+      >
+        <span
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontWeight: 200,
+            fontSize: 'var(--text-eyebrow)',
+            letterSpacing: '.14em',
+            textTransform: 'uppercase',
+            color: 'var(--color-accent-primary)',
+          }}
+        >
+          Blog
+        </span>
+        <h2
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(2.6rem,5.6vw,4.5rem)',
+            lineHeight: 1.08,
+            color: 'var(--color-text-primary)',
+            margin: 0,
+          }}
+        >
+          The Reya Journal.
+        </h2>
+      </div>
+
+      <div
+        data-reveal=""
+        style={{
+          opacity: 0,
+          transform: 'translateY(28px)',
+          transition: 'opacity .8s var(--ease-standard),transform .8s var(--ease-standard)',
+        }}
+      >
+        <div className="reya-postgrid reya-postgrid--rail">
+          {posts.slice(0, 4).map((post) => (
+            <BlogCard
+              key={post.slug}
+              post={post}
+              sizes="(max-width: 640px) 78vw, (max-width: 1100px) 50vw, 25vw"
+            />
+          ))}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 'clamp(36px,4vw,56px)' }}>
+          <Link
+            href={BLOG_PATH}
+            className="reya-cta reya-cta--outline"
+            style={{ fontSize: 'var(--text-body)', fontWeight: 300, padding: '14px 34px' }}
+          >
+            View all posts
+          </Link>
+        </div>
       </div>
     </section>
   );

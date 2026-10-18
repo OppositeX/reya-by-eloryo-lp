@@ -5,7 +5,20 @@ import Image from 'next/image';
 import { navLinks } from '@/lib/content';
 import { CloseIcon } from './ui';
 
-export default function Nav({ onInquire }: { onInquire: () => void }) {
+/**
+ * `solid` keeps the light, readable header state from the first paint (for
+ * pages without a dark hero); `anchorBase` prefixes in-page section links so
+ * they lead back to the landing page from elsewhere, e.g. '/preview#faq'.
+ */
+export default function Nav({
+  onInquire,
+  solid = false,
+  anchorBase = '',
+}: {
+  onInquire: () => void;
+  solid?: boolean;
+  anchorBase?: string;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -26,7 +39,9 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
     };
   }, [mobileOpen]);
 
-  const linkColor = scrolled ? 'var(--color-text-primary)' : '#efeae1';
+  const opaque = solid || scrolled;
+  const linkColor = opaque ? 'var(--color-text-primary)' : '#efeae1';
+  const resolve = (href: string) => (href.startsWith('#') ? `${anchorBase}${href}` : href);
   const inquire = () => {
     setMobileOpen(false);
     onInquire();
@@ -77,15 +92,15 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
           alignItems: 'center',
           gap: 32,
           padding: '0.75em 4em',
-          background: scrolled ? 'oklch(from var(--reya-cream) l c h / 0.82)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(14px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
-          borderBottom: `1px solid ${scrolled ? 'var(--color-border)' : 'transparent'}`,
+          background: opaque ? 'oklch(from var(--reya-cream) l c h / 0.82)' : 'transparent',
+          backdropFilter: opaque ? 'blur(14px)' : 'none',
+          WebkitBackdropFilter: opaque ? 'blur(14px)' : 'none',
+          borderBottom: `1px solid ${opaque ? 'var(--color-border)' : 'transparent'}`,
           transition:
             'background 700ms var(--ease-standard),border-color 700ms var(--ease-standard)',
         }}
       >
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', color: 'inherit' }}>
+        <a href={anchorBase || '#top'} style={{ display: 'flex', alignItems: 'center', color: 'inherit' }}>
           <Image
             src="/uploads/reya-logo.webp"
             alt="Reya — Your place to belong"
@@ -95,7 +110,7 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
             style={{
               height: 42,
               width: 'auto',
-              filter: scrolled ? 'brightness(0) saturate(0) opacity(0.85)' : 'none',
+              filter: opaque ? 'brightness(0) saturate(0) opacity(0.85)' : 'none',
               transition: 'filter 250ms var(--ease-standard)',
             }}
           />
@@ -115,7 +130,7 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
             <a
               key={l.href}
               className="reya-underline"
-              href={l.href}
+              href={resolve(l.href)}
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: 'var(--text-body-sm)',
@@ -220,7 +235,7 @@ export default function Nav({ onInquire }: { onInquire: () => void }) {
                 <a
                   key={l.href}
                   onClick={() => setMobileOpen(false)}
-                  href={l.href}
+                  href={resolve(l.href)}
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: 'clamp(1.8rem,8vw,2.75rem)',
